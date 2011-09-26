@@ -30,3 +30,9 @@
                     (list #'autopair-default-handle-action
                           #'autopair-python-triple-quote-action)))
           1)
+
+(require 'comint)
+(define-key comint-mode-map (kbd "M-") 'comint-next-input)
+(define-key comint-mode-map (kbd "M-") 'comint-previous-input)
+(define-key comint-mode-map [down] 'comint-next-matching-input-from-input)
+(define-key comint-mode-map [up] 'comint-previous-matching-input-from-input)
