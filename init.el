@@ -92,16 +92,6 @@ new directories are prepended to emacs's initial Info path."
 (add-init-path-to-info-path)
 
 
-;;; This was installed by package-install.el.
-;;; This provides support for the package system and
-;;; interfacing with ELPA, the package archive.
-;;; Move this code earlier if you want to reference
-;;; packages in your .emacs.
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
-
 
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
@@ -109,6 +99,5 @@ new directories are prepended to emacs's initial Info path."
 
 (server-start)
 
-(load (expand-file-name "init-old.el" init-path))
 
 (provide 'init)

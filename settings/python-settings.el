@@ -13,6 +13,13 @@
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 
+(eval-after-load 'auto-complete
+  '(progn
+     (ac-ropemacs-initialize)
+     (add-hook 'python-mode-hook
+               (lambda ()
+                 (add-to-list 'ac-sources 'ac-source-ropemacs)))))
+
 (require 'virtualenv)
 
 ;;;; these should be done as autoloads by ~/.emacs.d/loaddefs.el
