@@ -10,6 +10,8 @@
 
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "C-c j") 'join-line)
+(global-set-key (kbd "C-c t") 'fold-dwim-toggle)
+
 
 
 
@@ -62,6 +64,18 @@ manpage of a `current-word'."
                 (lambda () (interactive) (text-scale-increase -1)))
 (global-set-key (kbd "<C-down-mouse-2>")
                 (lambda () (interactive) (text-scale-increase 0)))
+
+
+;;;;;;;; Managing hooks ;;;;;;;;;
+
+
+(add-hook 'hs-minor-mode-hook #'hideshowvis-enable 1)
+(add-hook 'hs-minor-mode-hook (lambda ()
+                                (when (and hs-minor-mode (not hideshowvis-minor-mode))
+                                  (message "hs-minor-mode-hook powers activate hideshowvis")
+                                  (hideshowvis-enable))))
+;; Make scripts executable on save
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 
 ;;;;;;;; Managing Settings Files ;;;;;;;;
@@ -145,10 +159,6 @@ all absolute. if DIR is a file, an empty list is returned."
 
 (require 'auto-complete-config)
 (ac-config-default)
-
-
-;; Make scripts executable on save
-(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 
 (provide 'misc-settings)

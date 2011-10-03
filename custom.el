@@ -11,6 +11,7 @@
  '(diff-switches "-u")
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
+ '(hs-isearch-open t)
  '(ibuffer-saved-filter-groups nil)
  '(ibuffer-saved-filters (quote (("clsql" ((filename . "lisp/clsql/"))) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
  '(ido-auto-merge-delay-time 99999)

@@ -4,3 +4,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.?gitignore" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.?gitconfig" . conf-mode))
+
+(add-to-list 'magit-mode-hook
+             #'(lambda ()
+                 (make-local-variable 'scroll-margin)
+                 (setq scroll-margin 15)))

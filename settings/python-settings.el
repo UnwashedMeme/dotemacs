@@ -22,11 +22,10 @@
 
 (require 'virtualenv)
 
-;;;; these should be done as autoloads by ~/.emacs.d/loaddefs.el
-;(require 'python-pep8)
-;(require 'python-pylint)
 
 (add-hook 'python-mode-hook #'lambda-mode 1)
+(add-hook 'python-mode-hook #'hs-minor-mode 1)
+
 
 (add-hook 'python-mode-hook
           #'(lambda ()
