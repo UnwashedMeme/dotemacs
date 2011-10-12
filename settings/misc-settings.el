@@ -68,12 +68,10 @@ manpage of a `current-word'."
 
 ;;;;;;;; Managing hooks ;;;;;;;;;
 
-
-(add-hook 'hs-minor-mode-hook #'hideshowvis-enable 1)
-(add-hook 'hs-minor-mode-hook (lambda ()
-                                (when (and hs-minor-mode (not hideshowvis-minor-mode))
-                                  (message "hs-minor-mode-hook powers activate hideshowvis")
-                                  (hideshowvis-enable))))
+;; (add-hook 'hs-minor-mode-hook (lambda ()
+;;                                 (when (and hs-minor-mode (not hideshowvis-minor-mode))
+;;                                   (message "hs-minor-mode-hook powers activate hideshowvis")
+;;                                   (hideshowvis-enable))))
 ;; Make scripts executable on save
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
