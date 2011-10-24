@@ -35,6 +35,7 @@
  '(show-paren-mode t)
  '(slime-enable-evaluate-in-emacs t)
  '(slime-net-coding-system (quote utf-8-unix))
+ '(slime-repl-history-file "~/.emacs.d/persistence/.slime-history.eld")
  '(smex-save-file "~/.emacs.d/persistence/.smex-items")
  '(tool-bar-mode nil)
  '(tramp-persistency-file-name "/home/ACCELERATION/nathan/.emacs.d/persistence/tramp")
