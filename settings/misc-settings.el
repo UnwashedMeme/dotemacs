@@ -38,6 +38,13 @@
     (if face (message "Face: %s" face) (message "No face at %d" pos))))
 
 
+(defun fixup-quotes ()
+  (interactive)
+  (save-excursion
+   (goto-char (point-min))
+   (while (search-forward-regexp "[“”]" nil t)
+          (replace-match "\"" nil t))))
+
 
 (defun my-help ()
   "If thing at point is a:
