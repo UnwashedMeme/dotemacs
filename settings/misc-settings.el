@@ -162,8 +162,8 @@ all absolute. if DIR is a file, an empty list is returned."
         (delete-file elc)))))
 
 
-(require 'auto-complete-config)
-(ac-config-default)
+;(require 'auto-complete-config)
+;(ac-config-default)
 
 
 (provide 'misc-settings)
