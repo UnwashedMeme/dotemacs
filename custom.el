@@ -7,6 +7,7 @@
  '(backup-directory-alist (quote (("." . "~/.emacs.d/persistence/backups"))))
  '(clean-buffer-list-delay-general 4)
  '(column-number-mode t)
+ '(custom-safe-themes (quote ("419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(desktop-path (quote ("." "~/.emacs.d/persistence" "~")))
  '(desktop-save-mode t)
