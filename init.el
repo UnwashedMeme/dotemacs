@@ -97,6 +97,8 @@ new directories are prepended to emacs's initial Info path."
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
   (ignore-errors (load-file file)))
 
+(message "Finished all settings files.")
+
 (server-start)
 
 

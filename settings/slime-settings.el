@@ -28,6 +28,11 @@
                  ("/var/darcs" . "/mnt/progden/darcs-root")))
  slime-filename-translations)
 
+(push 
+ (slime-filename-translation-mount-map
+  "nathan-ubuntu" '(("" . "")))
+ slime-filename-translations)
+
 ;; (destructuring-bind (name local remote)
 ;;     (slime-filename-translation-mount-map
 ;;      "progden" '(("/home/ACCELERATION/" . "/mnt/progden/home/")

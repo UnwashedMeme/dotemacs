@@ -5,13 +5,32 @@
 ;(autoload 'pymacs-exec "pymacs" nil t)
 ;(autoload 'pymacs-load "pymacs" nil t)
 
-(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
-(require 'ipython)
-(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
+;(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
+;(require 'ipython)
+;(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
 
 
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+(setq interpreter-mode-alist (cons '("python" . python-mode)
+                                   interpreter-mode-alist))
+
+(autoload 'python-mode "python-mode" "Python editing mode." t)
+
+(eval-after-load 'python-mode 
+                 '(run-with-idle-timer  10 nil 
+                   '(lambda ()
+                     (message "Idle loading ropemacs.")
+                     (require 'pymacs)
+                     (pymacs-load "ropemacs" "rope-")
+                     ;;ropemacs isn't working over tramp for me right now.
+                     (remove-hook 'python-mode-hook 'ropemacs-mode)
+                     (add-hook 'python-mode-hook 
+                      #'(lambda ()
+                          (unless (tramp-handle-file-remote-p (buffer-file-name))
+                            (ropemacs-mode))))
+                     (message "Finished loading ropemacs."))))
+
+
 
 (eval-after-load 'auto-complete
   '(progn
@@ -25,7 +44,6 @@
 
 (add-hook 'python-mode-hook #'lambda-mode 1)
 (add-hook 'python-mode-hook #'hs-minor-mode 1)
-
 
 (add-hook 'python-mode-hook
           #'(lambda ()
