@@ -45,3 +45,8 @@
 ;;         (funcall remote "/something/weird")))
 
 ;(slime-tramp-from-lisp-filename "/home/ACCELERATION/russ/lisp/ADWolf/src/adwolf-model.lisp")
+
+
+(defun slime-progden ()
+  (interactive)
+  (slime-connect "127.0.0.1" 4216))
