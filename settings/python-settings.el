@@ -10,25 +10,33 @@
 ;(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
 
 
-(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-(setq interpreter-mode-alist (cons '("python" . python-mode)
-                                   interpreter-mode-alist))
+;(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+;(setq interpreter-mode-alist (cons '("python" . python-mode)
+;                                   interpreter-mode-alist))
 
 (autoload 'python-mode "python-mode" "Python editing mode." t)
+(autoload 'ipython "python-mode" "Start and IPython shell." t)
+(autoload 'py-shell "python-mode" "Start and python shell." t)
 
-(eval-after-load 'python-mode 
-                 '(run-with-idle-timer  10 nil 
-                   '(lambda ()
-                     (message "Idle loading ropemacs.")
-                     (require 'pymacs)
-                     (pymacs-load "ropemacs" "rope-")
-                     ;;ropemacs isn't working over tramp for me right now.
-                     (remove-hook 'python-mode-hook 'ropemacs-mode)
-                     (add-hook 'python-mode-hook 
-                      #'(lambda ()
-                          (unless (tramp-handle-file-remote-p (buffer-file-name))
-                            (ropemacs-mode))))
-                     (message "Finished loading ropemacs."))))
+
+(setq py-install-directory 
+      (first (find-subdirs-containing init-path "python-mode.el")))
+
+
+(defun python-settings-load-pymacs-modules ()
+  (require 'pymacs)
+  (pymacs-load "ropemacs" "rope-"))
+
+
+(defun ropemacs-mode ()
+  (interactive)
+  
+  (python-settings-load-pymacs-modules)
+  (defadvice ropemacs-mode (around no-ropemacs-tramp activate)
+    (unless (tramp-handle-file-remote-p (buffer-file-name))
+      ad-do-it))
+  (ropemacs-mode))
+
 
 
 
@@ -39,11 +47,22 @@
                (lambda ()
                  (add-to-list 'ac-sources 'ac-source-ropemacs)))))
 
-(require 'virtualenv)
+(autoload 'virtualenv-workon "virtualenv" nil t)
+(eval-after-load "virtualenv"
+                 '(progn
+
+                   (message "After virtualenv load; defining advice")
+                   (defadvice virtualenv-workon (after virtualenv-kill-pymacs activate)
+                    (when (and (boundp 'pymacs-transit-buffer) 
+                               pymacs-transit-buffer)
+                      (pymacs-terminate-services))
+                    (python-settings-load-pymacs-modules))))
+
 
 
 (add-hook 'python-mode-hook #'lambda-mode 1)
 (add-hook 'python-mode-hook #'hs-minor-mode 1)
+(add-hook 'python-mode-hook #'ctags-update-minor-mode 1)
 
 (add-hook 'python-mode-hook
           #'(lambda ()
