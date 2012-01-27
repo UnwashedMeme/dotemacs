@@ -25,3 +25,14 @@ e.g. http://www.blazingthings.com/dev/zcatalog.html becomes
         (insert "[")
         (goto-char (end-of-thing 'url))
         (insert " " title "]")))))
+
+(push '("COMMIT_EDITMSG" . git-commit-msg) auto-mode-alist)
+;;;###autoload
+(defun git-commit-msg ()
+  (interactive)
+  ;; Make fill-paragraph respect bulleted-lists
+  (make-variable-buffer-local 'paragraph-start)
+  (make-variable-buffer-local 'paragraph-separate)
+  (setq paragraph-start " ?\\*\\|$" 
+        paragraph-separate "$")
+  (auto-fill-mode))

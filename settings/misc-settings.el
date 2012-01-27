@@ -2,7 +2,6 @@
 (push (cons "\\.\\(lisp\\|asd\\|sh\\|py\\|cl\\)\\'" 'utf-8-unix) auto-coding-alist)
 
 
-
 (defun insert-key (key)
   (interactive (list (read-key-sequence "Key: ")))
   (insert "(kbd \"" (key-description key) "\")"))
@@ -22,6 +21,7 @@
 ;(setq cssm-newline-before-closing-bracket t)
 ;(setq cssm-indent-function #'cssm-c-style-indenter)
 (push '("\\.php$" . html-mode) auto-mode-alist)
+(push '("COMMIT_EDITMSG" . git-commit-msg) auto-mode-alist)
 
 ;; Replace Stupid yes or no with y or n
 (defalias 'old-yes-or-no-p (function yes-or-no-p))

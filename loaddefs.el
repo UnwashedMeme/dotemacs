@@ -133,6 +133,25 @@ Major mode for editing PHP code.
 
 ;;;***
 
+;;;### (autoloads (git-commit-msg trac-link-title) "site-lisp/trac-fns"
+;;;;;;  "site-lisp/trac-fns.el" (20254 55945))
+;;; Generated autoloads from site-lisp/trac-fns.el
+
+(autoload 'trac-link-title "site-lisp/trac-fns" "\
+Turn the url at point into a trac link titled with the page title at that url.
+
+e.g. http://www.blazingthings.com/dev/zcatalog.html becomes
+ [http://www.blazingthings.com/dev/zcatalog.html Standalone ZCatalog search system for the ZODB]
+
+\(fn)" t nil)
+
+(autoload 'git-commit-msg "site-lisp/trac-fns" "\
+
+
+\(fn INTERACTIVE)" nil nil)
+
+;;;***
+
 ;;;### (autoloads (trac-link-title) "trac-fns" "site-lisp/trac-fns.el"
 ;;;;;;  (20133 45780))
 ;;; Generated autoloads from site-lisp/trac-fns.el
