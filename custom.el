@@ -25,6 +25,8 @@
  '(ido-ubiquitous-mode t)
  '(indent-tabs-mode nil)
  '(linum-delay t)
+ '(max-lisp-eval-depth 2048)
+ '(max-specpdl-size 4000)
  '(mouse-drag-copy-region nil)
  '(mpc-host "mahes")
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("marmalade" . "http://marmalade-repo.org/packages/"))))
