@@ -47,18 +47,6 @@
                (lambda ()
                  (add-to-list 'ac-sources 'ac-source-ropemacs)))))
 
-(autoload 'virtualenv-workon "virtualenv" nil t)
-(eval-after-load "virtualenv"
-                 '(progn
-
-                   (message "After virtualenv load; defining advice")
-                   (defadvice virtualenv-workon (after virtualenv-kill-pymacs activate)
-                    (when (and (boundp 'pymacs-transit-buffer) 
-                               pymacs-transit-buffer)
-                      (pymacs-terminate-services))
-                    (python-settings-load-pymacs-modules))))
-
-
 
 (add-hook 'python-mode-hook #'lambda-mode 1)
 (add-hook 'python-mode-hook #'hs-minor-mode 1)
