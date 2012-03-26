@@ -42,6 +42,7 @@
  '(scroll-margin 3)
  '(scroll-preserve-screen-position t)
  '(select-active-regions t)
+ '(server-use-tcp t)
  '(show-paren-mode t)
  '(slime-enable-evaluate-in-emacs t)
  '(slime-net-coding-system (quote utf-8-unix))
