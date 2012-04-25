@@ -1,6 +1,6 @@
 
 ;;;;;;;;;;;;; slime-setup ;;;;;;;;;;;;;;
-(if (equal (system-name) "nathan-ubuntu")
+(if (equal (system-name) "nathan-ubuntu.acceleration.net")
     (load (expand-file-name "~/projects/lisp/ADWCodeBase/misc/shared-slime-init.el"))
   (progn
     (add-to-list 'load-path "S:/slime")

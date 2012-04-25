@@ -12,6 +12,7 @@
 (global-set-key (kbd "C-c t") 'fold-dwim-toggle)
 
 
+(push '("\\.pp$" . puppet-mode) auto-mode-alist)
 
 
 ;;CSS mode crap
