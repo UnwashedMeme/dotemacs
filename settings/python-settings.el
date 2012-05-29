@@ -99,6 +99,7 @@
 (defun mypylint (command)
   (interactive
    (progn
+     (require 'python-pylint)
      (let* ((tramp (tramp-tramp-file-p (buffer-file-name)))
             (file (or (and tramp
                            (aref (tramp-dissect-file-name (buffer-file-name)) 3))
