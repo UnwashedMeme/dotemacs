@@ -1,9 +1,9 @@
-;(push (expand-file-name "~/.emacs.d/site-lisp/Pymacs") load-path)
-;(autoload 'pymacs-apply "pymacs")
-;(autoload 'pymacs-call "pymacs")
-;(autoload 'pymacs-eval "pymacs" nil t)
-;(autoload 'pymacs-exec "pymacs" nil t)
-;(autoload 'pymacs-load "pymacs" nil t)
+;(delete (expand-file-name "~/projects/Pymacs") load-path)
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
 
 ;(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
 ;(require 'ipython)
@@ -19,7 +19,7 @@
 (autoload 'py-shell "python-mode" "Start and python shell." t)
 
 
-(setq py-install-directory 
+(setq py-install-directory
       (first (find-subdirs-containing init-path "python-mode.el")))
 
 
@@ -91,7 +91,7 @@
     (message-id
      (pushnew message-id mypylint-ignore-message-ids :test 'string=)
      (message "Currently ignoring: %s" mypylint-ignore-message-ids))
-    (T (message "No message-id found to ignore."))))
+    (t (message "No message-id found to ignore."))))
 
 (eval-after-load 'python-pylint 
                  '(define-key python-pylint-mode-map "i" 'mypylint-ignore-message))
