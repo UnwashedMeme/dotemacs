@@ -164,5 +164,13 @@ all absolute. if DIR is a file, an empty list is returned."
 
 
 
+(defun eval-sexp-at-point ()
+  (interactive)
+  (let* ((sexp (sexp-at-point))
+         (res (eval sexp)))
+    (destructuring-bind (start . end) (bounds-of-thing-at-point 'sexp)
+      (delete-region start end))
+    (princ res (current-buffer))))
+
 (provide 'misc-settings)
 
