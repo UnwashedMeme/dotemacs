@@ -52,6 +52,7 @@
  '(slime-repl-history-trim-whitespaces t)
  '(smex-save-file "~/.emacs.d/persistence/.smex-items")
  '(tool-bar-mode nil)
+ '(tramp-default-method "scpx")
  '(tramp-persistency-file-name "/home/ACCELERATION/nathan/.emacs.d/persistence/tramp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Nathan Bird")

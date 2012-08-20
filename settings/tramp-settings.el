@@ -31,4 +31,3 @@ are preserved through the toggle."
     (find-alternate-file new-filename)
     (goto-char old-point)
     (set-mark old-mark)))
-
