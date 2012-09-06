@@ -25,7 +25,7 @@
  '(ido-ubiquitous-mode t)
  '(indent-tabs-mode nil)
  '(linum-delay t)
- '(max-lisp-eval-depth 2048)
+ '(max-lisp-eval-depth 8192)
  '(max-specpdl-size 4000)
  '(mouse-drag-copy-region nil)
  '(mpc-host "mahes")
