@@ -82,11 +82,13 @@
   (interactive 
    (list 
     (if (string= (buffer-name (current-buffer)) "*python-pylint*")
-        (let ((potential-id (prin1-to-string (symbol-at-point))))
-          (message "Found potential-id: %s" potential-id)
-          (and (string-match "^[CWRE][0-9]*$" potential-id)
-               potential-id))
-        (read-from-minibuffer "Message ID: "))))
+        (let ((case-fold-search nil)
+              (line (thing-at-point 'line)))
+          (message line)
+          (if (string-match "\\[\\([CWRE][0-9]+\\)" line)
+              (match-string 1 line)
+              (read-from-minibuffer "Message ID: ")))
+        )))
   (cond 
     (message-id
      (pushnew message-id mypylint-ignore-message-ids :test 'string=)
