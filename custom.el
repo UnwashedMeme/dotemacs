@@ -57,6 +57,7 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Nathan Bird")
  '(user-mail-address "nathan@acceleration.net")
+ '(vcl-indent-level 3)
  '(winner-mode t nil (winner))
  '(x-select-enable-clipboard t)
  '(x-select-enable-primary t))
