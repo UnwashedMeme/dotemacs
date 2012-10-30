@@ -1,3 +1,5 @@
+(load (expand-file-name "emacs-ipython-notebook/lisp/ein-loaddefs.el" init-packages-path))
+
 ;(delete (expand-file-name "~/projects/Pymacs") load-path)
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
@@ -40,12 +42,13 @@
 
 
 
-(eval-after-load 'auto-complete
-  '(progn
-     (ac-ropemacs-initialize)
-     (add-hook 'python-mode-hook
-               (lambda ()
-                 (add-to-list 'ac-sources 'ac-source-ropemacs)))))
+;; (eval-after-load 'auto-complete
+;;   '(progn
+;;     (python-settings-load-pymacs-modules)
+;;     (ac-ropemacs-initialize)
+;;     (add-hook 'python-mode-hook
+;;      (lambda ()
+;;        (add-to-list 'ac-sources 'ac-source-ropemacs)))))
 
 
 (add-hook 'python-mode-hook #'lambda-mode 1)
