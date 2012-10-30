@@ -58,7 +58,6 @@ prepended to emacs's initial load-path."
 
 
 
-
 (defun add-init-path-to-info-path ()
   "Add the subdirectories of init-path that contain info directory
 files to the Info-directory-list.  This can safely be run many times
@@ -66,8 +65,6 @@ in a session, without adding multiple copies of the directories.  The
 new directories are prepended to emacs's initial Info path."
   (interactive)
   (setq Info-directory-list (append (find-subdirs-containing init-path "^dir$") initial-info-path)))
-
-
 
 
 
