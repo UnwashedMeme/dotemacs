@@ -65,6 +65,15 @@
                           #'autopair-python-triple-quote-action)))
           1)
 
+;; (add-hook 'python-mode-hook
+;;           #'(lambda ()
+;;               (message "python-mode-hook")
+;;               (when delete-selection-mode
+;;                 (message "Disabling delete-selection-mode")
+;;                 (delete-selection-mode))
+;;               (smartparens-mode)
+;;               (sp-turn-on-delete-selection-mode)))
+
 (require 'comint)
 (define-key comint-mode-map (kbd "M-") 'comint-next-input)
 (define-key comint-mode-map (kbd "M-") 'comint-previous-input)

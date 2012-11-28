@@ -133,6 +133,50 @@ Major mode for editing PHP code.
 
 ;;;***
 
+;;;### (autoloads (turn-off-smartparens-mode turn-on-smartparens-mode
+;;;;;;  smartparens-global-mode smartparens-mode) "site-lisp/smartparens/smartparens"
+;;;;;;  "site-lisp/smartparens/smartparens.el" (20662 6919 879141
+;;;;;;  278000))
+;;; Generated autoloads from site-lisp/smartparens/smartparens.el
+
+(autoload 'smartparens-mode "site-lisp/smartparens/smartparens" "\
+Toggle smartparens mode
+
+\(fn &optional ARG)" t nil)
+
+(defvar smartparens-global-mode nil "\
+Non-nil if Smartparens-Global mode is enabled.
+See the command `smartparens-global-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `smartparens-global-mode'.")
+
+(custom-autoload 'smartparens-global-mode "site-lisp/smartparens/smartparens" nil)
+
+(autoload 'smartparens-global-mode "site-lisp/smartparens/smartparens" "\
+Toggle Smartparens mode in all buffers.
+With prefix ARG, enable Smartparens-Global mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Smartparens mode is enabled in all buffers where
+`turn-on-smartparens-mode' would do it.
+See `smartparens-mode' for more information on Smartparens mode.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-smartparens-mode "site-lisp/smartparens/smartparens" "\
+Turn on `smartparens-mode'.
+
+\(fn)" t nil)
+
+(autoload 'turn-off-smartparens-mode "site-lisp/smartparens/smartparens" "\
+Turn off `smartparens-mode'.
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads (git-commit-msg trac-link-title) "site-lisp/trac-fns"
 ;;;;;;  "site-lisp/trac-fns.el" (20254 55945))
 ;;; Generated autoloads from site-lisp/trac-fns.el
