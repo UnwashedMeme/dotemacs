@@ -4,10 +4,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ac-comphist-file "/home/ACCELERATION/nathan/.emacs.d/persistence/ac-comphist.dat")
+ '(ampc-default-server (quote ("10.201.35.222" . 6600)))
  '(backup-directory-alist (quote (("." . "~/.emacs.d/persistence/backups"))))
  '(clean-buffer-list-delay-general 4)
  '(column-number-mode t)
- '(custom-safe-themes (quote ("be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
+ '(custom-safe-themes (quote ("5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(delete-selection-mode t)
  '(desktop-path (quote ("." "~/.emacs.d/persistence" "~")))
