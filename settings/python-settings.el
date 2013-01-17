@@ -1,4 +1,4 @@
-(load (expand-file-name "emacs-ipython-notebook/lisp/ein-loaddefs.el" init-packages-path))
+;(load (expand-file-name "emacs-ipython-notebook/lisp/ein-loaddefs.el" init-packages-path))
 
 ;(delete (expand-file-name "~/projects/Pymacs") load-path)
 (autoload 'pymacs-apply "pymacs")
