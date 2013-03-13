@@ -32,6 +32,7 @@
  '(mpc-host "mahes")
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("marmalade" . "http://marmalade-repo.org/packages/"))))
  '(pc-selection-mode t)
+ '(php-file-patterns (quote ("\\.php[s34]?\\'" "\\.phtml\\'" "\\.inc\\'" "\\.body\\.php\\'")))
  '(py-shell-name "ipython")
  '(py-start-run-py-shell nil)
  '(read-buffer-completion-ignore-case t)
