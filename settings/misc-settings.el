@@ -13,6 +13,7 @@
 
 
 (push '("\\.pp$" . puppet-mode) auto-mode-alist)
+(push '("\\.sls$" . yaml-mode) auto-mode-alist)
 
 
 ;;CSS mode crap
