@@ -15,6 +15,8 @@
 (push '("\\.pp$" . puppet-mode) auto-mode-alist)
 (push '("\\.sls$" . yaml-mode) auto-mode-alist)
 
+(autoload 'yaml-mode "yaml-mode.el")
+
 
 ;;CSS mode crap
 ;;try to fix strange stuff in css mode.
