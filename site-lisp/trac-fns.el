@@ -26,7 +26,7 @@ e.g. http://www.blazingthings.com/dev/zcatalog.html becomes
         (goto-char (end-of-thing 'url))
         (insert " " title "]")))))
 
-(push '("COMMIT_EDITMSG" . git-commit-msg) auto-mode-alist)
+(push '("(COMMIT|TAG)_EDITMSG" . git-commit-msg) auto-mode-alist)
 ;;;###autoload
 (defun git-commit-msg ()
   (interactive)
