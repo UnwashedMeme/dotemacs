@@ -1,6 +1,7 @@
 (prefer-coding-system 'utf-8-unix)
 (push (cons "\\.\\(lisp\\|asd\\|sh\\|py\\|cl\\)\\'" 'utf-8-unix) auto-coding-alist)
 
+(setenv "MANWIDTH" "108")
 
 (defun insert-key (key)
   (interactive (list (read-key-sequence "Key: ")))
@@ -14,8 +15,11 @@
 
 (push '("\\.pp$" . puppet-mode) auto-mode-alist)
 (push '("\\.sls$" . yaml-mode) auto-mode-alist)
+(push '("\\.vcl$" . vcl-mode) auto-mode-alist)
 
 (autoload 'yaml-mode "yaml-mode.el")
+(autoload 'vcl-mode "vcl-mode.el")
+
 
 
 ;;CSS mode crap
@@ -24,8 +28,8 @@
 ;(setq cssm-indent-level 2)
 ;(setq cssm-newline-before-closing-bracket t)
 ;(setq cssm-indent-function #'cssm-c-style-indenter)
-(push '("\\.php$" . html-mode) auto-mode-alist)
-(push '("COMMIT_EDITMSG" . git-commit-msg) auto-mode-alist)
+(push '("\\.php$" . php-mode) auto-mode-alist)
+(push '("(COMMIT|TAG|MERGE)_EDITMSG" . git-commit-msg) auto-mode-alist)
 
 ;; Replace Stupid yes or no with y or n
 (defalias 'old-yes-or-no-p (function yes-or-no-p))
@@ -111,40 +115,6 @@ and re-added at the head."
 (defun string-ends-with (ending string)
   "Return t if the final characters of STRING are ENDING"
   (string-match-p (concat ending "$") string))
-
-(defun directory-list-recursive (dir &optional hidden)
-  "Return a list of DIR and all of its subdirectories, recursively.
-
-If HIDDEN is t, include hidden directories. Paths returned are
-all absolute. if DIR is a file, an empty list is returned."
-  (when (file-directory-p dir)
-    (directory-list-recursive-internal (expand-file-name dir) hidden)))
-
-(defun directory-list-recursive-internal (dir hidden)
-  "Don't use this function directly. See `directory-list-recursive'."
-  (assert (file-name-absolute-p dir))
-  (let ((subdirs (remove-if-not (lambda (subdir)
-                                  (and (file-directory-p subdir)
-                                       (not (member (file-name-nondirectory subdir) '("." "..")))))
-                                (directory-files dir 'full nil 'nosort))))
-    (when (not hidden)
-      (setq subdirs
-            (remove-if (lambda (subdir)
-                         (string= "." (substring (file-name-nondirectory subdir) 0 1)))
-                       subdirs)))
-    (cons dir (mapcan (lambda (subdir) (directory-list-recursive-internal subdir hidden))
-                      subdirs))))
-
-(defun clean-stale-elc-files (dir &optional recursive hidden)
-  "Delete elc files in DIR that do not have corresponding el files."
-  (dolist (dir (if recursive
-                   (directory-list-recursive dir hidden)
-                 (list dir)))
-    (dolist (elc (directory-files dir 'full "\\.elc$" 'nosort))
-      (unless (file-exists-p (concat (file-name-sans-extension elc) ".el"))
-        (message "Cleaning stale elc file %s" elc)
-        (delete-file elc)))))
-
 
 
 (defun eval-sexp-at-point ()
