@@ -1,20 +1,10 @@
-;(load (expand-file-name "emacs-ipython-notebook/lisp/ein-loaddefs.el" init-packages-path))
 
-;(delete (expand-file-name "~/projects/Pymacs") load-path)
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-exec "pymacs" nil t)
 (autoload 'pymacs-load "pymacs" nil t)
 
-;(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
-;(require 'ipython)
-;(setq py-python-command-args '("-i" "--colors=LightBG" "--no-term-title"))
-
-
-;(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-;(setq interpreter-mode-alist (cons '("python" . python-mode)
-;                                   interpreter-mode-alist))
 
 (autoload 'python-mode "python-mode" "Python editing mode." t)
 (autoload 'ipython "python-mode" "Start and IPython shell." t)
