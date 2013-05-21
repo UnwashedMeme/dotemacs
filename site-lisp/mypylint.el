@@ -102,17 +102,16 @@ Key bindings:
     (message "help was: %s" help)
     (when (and help (string-match "^\\([CWRE][0-9]+\\)" help))
       (let ((message-id (match-string 1 help)))
-        (message "Going to ignore: %s" message-id)
         (pushnew message-id mypylint-ignore-message-ids :test 'string=)
         (my-flymake-build-ignore)
+        (message "Ignored: %s" message-id)
         ))))
 
-(defun my-flymake-build-ignore (run)
+(defun my-flymake-build-ignore ()
   "Build the `--ignore=... argument out of our ignored codes.`"
   (setq flymake-python-pyflakes-extra-arguments
         (when mypylint-ignore-message-ids
             (list (concat "--ignore=" (mapconcat 'identity mypylint-ignore-message-ids ",")))))
   (when flymake-mode
-    ;; inc ase this is triggered by mypylint on a buffer not running flymake.
+    ;; in case this is triggered by mypylint on a buffer not running flymake.
     (flymake-start-syntax-check)))
-

@@ -14,12 +14,17 @@
 
 
 (push '("\\.pp$" . puppet-mode) auto-mode-alist)
-(push '("\\.sls$" . yaml-mode) auto-mode-alist)
-(push '("\\.vcl$" . vcl-mode) auto-mode-alist)
 
-(autoload 'yaml-mode "yaml-mode.el")
+
+(push '("\\.vcl$" . vcl-mode) auto-mode-alist)
 (autoload 'vcl-mode "vcl-mode.el")
 
+(push '("\\.sls$" . yaml-mode) auto-mode-alist)
+(autoload 'yaml-mode "yaml-mode.el")
+
+(push '("\\.md$" . markdown-mode) auto-mode-alist)
+(autoload 'markdown-mode "markdown-mode"
+          "Major mode for editing Markdown files" t)
 
 
 ;;CSS mode crap
