@@ -1,3 +1,12 @@
+;;;; python-mode.el code
+;; (setq py-install-directory
+;;       (first (find-subdirs-containing init-path "python-mode.el")))
+;; (autoload 'python-mode "python-mode" "Python editing mode." t)
+;; (autoload 'ipython "python-mode" "Start and IPython shell." t)
+;; (autoload 'py-shell "python-mode" "Start and python shell." t)
+
+
+;;;; pymacs code
 
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
@@ -6,19 +15,10 @@
 (autoload 'pymacs-load "pymacs" nil t)
 
 
-(autoload 'python-mode "python-mode" "Python editing mode." t)
-(autoload 'ipython "python-mode" "Start and IPython shell." t)
-(autoload 'py-shell "python-mode" "Start and python shell." t)
-
-
-(setq py-install-directory
-      (first (find-subdirs-containing init-path "python-mode.el")))
-
+;;;; ropemacs 
 
 (defun python-settings-load-pymacs-modules ()
-  (require 'pymacs)
   (pymacs-load "ropemacs" "rope-"))
-
 
 (defun ropemacs-mode ()
   (interactive)
@@ -30,6 +30,20 @@
   (ropemacs-mode))
 
 
+;;;; pyflakes
+(autoload 'mypylint "mypylint")
+(autoload 'my-flymake-minor-mode "mypylint")
+(defun maybe-flymake-activate ()
+  (cond ((not (tramp-handle-file-remote-p (buffer-file-name)))
+         (message "Activating flymake-python-pyflakes")
+         (flymake-python-pyflakes-load)
+         (message "Activing custom navigation minor-mode.")
+         (my-flymake-minor-mode))
+        (t
+         (message "Skipping flymake-python-pyflakes for remote tramp buffer."))))
+
+;;; maybe start pyflakes when we load python
+(add-hook 'python-mode-hook 'maybe-flymake-activate)
 
 
 ;; (eval-after-load 'auto-complete
@@ -42,8 +56,9 @@
 
 
 (add-hook 'python-mode-hook #'lambda-mode 1)
-(add-hook 'python-mode-hook #'hs-minor-mode 1)
+;(add-hook 'python-mode-hook #'hs-minor-mode 1)
 (add-hook 'python-mode-hook #'ctags-update-minor-mode 1)
+
 
 (add-hook 'python-mode-hook
           #'(lambda ()
@@ -64,67 +79,12 @@
 ;;               (smartparens-mode)
 ;;               (sp-turn-on-delete-selection-mode)))
 
-(require 'comint)
-(define-key comint-mode-map (kbd "M-") 'comint-next-input)
-(define-key comint-mode-map (kbd "M-") 'comint-previous-input)
-(define-key comint-mode-map [down] 'comint-next-matching-input-from-input)
-(define-key comint-mode-map [up] 'comint-previous-matching-input-from-input)
 
+;;;;; try to make python inferior processes behave better
+;; (require 'comint)
+;; (define-key comint-mode-map (kbd "M-") 'comint-next-input)
+;; (define-key comint-mode-map (kbd "M-") 'comint-previous-input)
+;; (define-key comint-mode-map [down] 'comint-next-matching-input-from-input)
+;; (define-key comint-mode-map [up] 'comint-previous-matching-input-from-input)
 
-
-
-(defvar mypylint-history nil "History list for pylint")
-(defvar mypylint-ignore-message-ids nil "List of pylint message ids to ignore.")
-
-(defun mypylint-reset-ignore ()
-  (interactive)
-  (setf mypylint-ignore-message-ids nil))
-
-(defun mypylint-ignore-message (message-id)
-  (interactive 
-   (list 
-    (if (string= (buffer-name (current-buffer)) "*python-pylint*")
-        (let ((case-fold-search nil)
-              (line (thing-at-point 'line)))
-          (message line)
-          (if (string-match "\\[\\([CWRE][0-9]+\\)" line)
-              (match-string 1 line)
-              (read-from-minibuffer "Message ID: ")))
-        )))
-  (cond 
-    (message-id
-     (pushnew message-id mypylint-ignore-message-ids :test 'string=)
-     (message "Currently ignoring: %s" mypylint-ignore-message-ids))
-    (t (message "No message-id found to ignore."))))
-
-(eval-after-load 'python-pylint 
-                 '(define-key python-pylint-mode-map "i" 'mypylint-ignore-message))
-
-(defun mypylint (command)
-  (interactive
-   (progn
-     (require 'python-pylint)
-     (let* ((tramp (tramp-tramp-file-p (buffer-file-name)))
-            (file (or (and tramp
-                           (aref (tramp-dissect-file-name (buffer-file-name)) 3))
-                      (file-relative-name (buffer-file-name))))
-            (python-pylint-options
-              (if mypylint-ignore-message-ids
-                  (list* "-d" (mapconcat 'identity mypylint-ignore-message-ids ",")
-                         python-pylint-options)
-                  python-pylint-options))
-            (command (mapconcat
-                      'identity
-                      (list python-pylint-command
-                            (mapconcat 'identity python-pylint-options " ")
-                            (comint-quote-filename file)) " ")))
-       (list (if current-prefix-arg
-                 (read-from-minibuffer "Run pylint: " command
-                                       nil nil 'mypylint-history)
-                 command)))))
-
-  (save-some-buffers (not python-pylint-ask-about-save) nil)
-  
-  (message "Running pylint command %s" command)
-  (compilation-start command 'python-pylint-mode))
 
