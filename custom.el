@@ -132,6 +132,7 @@
  '(slime-repl-history-remove-duplicates t)
  '(slime-repl-history-size 2000)
  '(slime-repl-history-trim-whitespaces t)
+ '(smartparens-global-mode t)
  '(smex-save-file "~/.emacs.d/persistence/.smex-items")
  '(tool-bar-mode nil)
  '(tramp-default-method "scpx")

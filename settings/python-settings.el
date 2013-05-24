@@ -60,15 +60,15 @@
 (add-hook 'python-mode-hook #'ctags-update-minor-mode 1)
 
 
-(add-hook 'python-mode-hook
-          #'(lambda ()
-              (autopair-mode)
-              (push '(?' . ?')
-                    (getf autopair-extra-pairs :code))
-              (setq autopair-handle-action-fns
-                    (list #'autopair-default-handle-action
-                          #'autopair-python-triple-quote-action)))
-          1)
+;; (add-hook 'python-mode-hook
+;;           #'(lambda ()
+;;               (autopair-mode)
+;;               (push '(?' . ?')
+;;                     (getf autopair-extra-pairs :code))
+;;               (setq autopair-handle-action-fns
+;;                     (list #'autopair-default-handle-action
+;;                           #'autopair-python-triple-quote-action)))
+;;           1)
 
 ;; (add-hook 'python-mode-hook
 ;;           #'(lambda ()

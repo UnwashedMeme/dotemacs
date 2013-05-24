@@ -3,88 +3,6 @@
 ;;; Code:
 
 
-;;;### (autoloads (paren-backward-sexp paren-forward-sexp paren-toggle-open-paren-context
-;;;;;;  paren-toggle-matching-quoted-paren paren-toggle-matching-paired-delimiter
-;;;;;;  paren-deactivate paren-activate) "mic-paren" "site-lisp/mic-paren.el"
-;;;;;;  (19143 56619))
-;;; Generated autoloads from site-lisp/mic-paren.el
-
-(autoload 'paren-activate "mic-paren" "\
-Activate mic-paren parenthesis highlighting.
-Note: This also deactivates the paren.el
-and stig-paren.el packages if they are active!
-
-The following options are available via the customize-feature:
-  `paren-priority'
-  `paren-overlay-priority'
-  `paren-sexp-mode'
-  `paren-highlight-at-point'
-  `paren-highlight-offscreen'
-  `paren-display-message'
-  `paren-message-linefeed-display'
-  `paren-message-no-match'
-  `paren-message-show-linenumber'
-  `paren-message-truncate-lines'
-  `paren-ding-unmatched'
-  `paren-delay'
-  `paren-dont-touch-blink'
-  `paren-match-face'
-  `paren-mismatch-face'
-  `paren-no-match-face'
-  `paren-bind-modified-sexp-functions'
-
-The following options are settable via toggling functions (look at the
-documentation of these options for the names of these functions):
-  `paren-match-quoted-paren'
-  `paren-match-paired-delimiter'
-  `paren-open-paren-context-backward'
-
-\(fn)" t nil)
-
-(autoload 'paren-deactivate "mic-paren" "\
-Deactivate mic-paren parenthesis highlighting.
-
-\(fn)" t nil)
-
-(autoload 'paren-toggle-matching-paired-delimiter "mic-paren" "\
-Toggle matching paired delimiter.
-Force on with positive ARG.  Use this in mode hooks to activate or
-deactivate paired delimiter matching.  If optional second argument
-NO-MESSAGE is non-nil then don't display a message about the
-current activation state of the paired-delimiter-matching feature.
-
-\(fn ARG &optional NO-MESSAGE)" t nil)
-
-(autoload 'paren-toggle-matching-quoted-paren "mic-paren" "\
-Toggle matching quoted parens.
-Force on with positive ARG.  Use this in mode hooks to activate or
-deactivate quoted paren matching.  If optional second argument
-NO-MESSAGE is non-nil then don't display a message about the
-current activation state of the quoted-paren-matching feature.
-
-\(fn ARG &optional NO-MESSAGE)" t nil)
-
-(autoload 'paren-toggle-open-paren-context "mic-paren" "\
-Toggle whether or not to determine context of the matching open-paren.
-Force backward context with positive ARG.  Use this in mode-hooks.
-See `paren-open-paren-context-backward'.
-
-\(fn ARG)" t nil)
-
-(autoload 'paren-forward-sexp "mic-paren" "\
-Act like `forward-sexp' but also handle quoted parens.
-See `paren-match-quoted-paren'.
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'paren-backward-sexp "mic-paren" "\
-Act like `backward-sexp' but also match quoted parens.
-See `paren-match-quoted-paren'.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
 ;;;### (autoloads (mo-git-blame-current mo-git-blame-file) "mo-git-blame"
 ;;;;;;  "site-lisp/mo-git-blame/mo-git-blame.el" (20111 4600))
 ;;; Generated autoloads from site-lisp/mo-git-blame/mo-git-blame.el
@@ -132,15 +50,34 @@ Major mode for editing PHP code.
 \(fn)" t nil)
 
 ;;;***
+
 
-;;;### (autoloads (turn-off-smartparens-mode turn-on-smartparens-mode
-;;;;;;  smartparens-global-mode smartparens-mode) "site-lisp/smartparens/smartparens"
-;;;;;;  "site-lisp/smartparens/smartparens.el" (20662 6919 879141
-;;;;;;  278000))
+;;;### (autoloads (turn-off-show-smartparens-mode turn-on-show-smartparens-mode
+;;;;;;  show-smartparens-global-mode show-smartparens-mode turn-off-smartparens-mode
+;;;;;;  turn-on-smartparens-mode smartparens-global-mode smartparens-mode
+;;;;;;  sp-use-smartparens-bindings sp-use-paredit-bindings) "site-lisp/smartparens/smartparens"
+;;;;;;  "site-lisp/smartparens/smartparens.el" (20895 53506 823032
+;;;;;;  138000))
 ;;; Generated autoloads from site-lisp/smartparens/smartparens.el
 
+(defvar sp-keymap (make-sparse-keymap) "\
+Keymap used for `smartparens-mode'.")
+
+(autoload 'sp-use-paredit-bindings "site-lisp/smartparens/smartparens" "\
+Initiate `sp-keymap' with paredit-compatible bindings for
+corresponding functions provided by smartparens.  See variable
+`sp-paredit-bindings'.
+
+\(fn)" t nil)
+
+(autoload 'sp-use-smartparens-bindings "site-lisp/smartparens/smartparens" "\
+Initiate `sp-keymap' with smartparens bindings for navigation functions.
+See variable `sp-smartparens-bindings'.
+
+\(fn)" t nil)
+
 (autoload 'smartparens-mode "site-lisp/smartparens/smartparens" "\
-Toggle smartparens mode
+Toggle smartparens mode.
 
 \(fn &optional ARG)" t nil)
 
@@ -172,6 +109,46 @@ Turn on `smartparens-mode'.
 
 (autoload 'turn-off-smartparens-mode "site-lisp/smartparens/smartparens" "\
 Turn off `smartparens-mode'.
+
+\(fn)" t nil)
+
+(autoload 'show-smartparens-mode "site-lisp/smartparens/smartparens" "\
+Toggle visualization of matching pairs.  When enabled, any
+matching pair is highlighted after `sp-show-pair-delay' seconds
+of Emacs idle time if the point is immediately in front or after
+a pair.  This mode works similarly to `show-paren-mode', but
+support custom pairs.
+
+\(fn &optional ARG)" t nil)
+
+(defvar show-smartparens-global-mode nil "\
+Non-nil if Show-Smartparens-Global mode is enabled.
+See the command `show-smartparens-global-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `show-smartparens-global-mode'.")
+
+(custom-autoload 'show-smartparens-global-mode "site-lisp/smartparens/smartparens" nil)
+
+(autoload 'show-smartparens-global-mode "site-lisp/smartparens/smartparens" "\
+Toggle Show-Smartparens mode in all buffers.
+With prefix ARG, enable Show-Smartparens-Global mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Show-Smartparens mode is enabled in all buffers where
+`turn-on-show-smartparens-mode' would do it.
+See `show-smartparens-mode' for more information on Show-Smartparens mode.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-show-smartparens-mode "site-lisp/smartparens/smartparens" "\
+Turn on `show-smartparens-mode'.
+
+\(fn)" t nil)
+
+(autoload 'turn-off-show-smartparens-mode "site-lisp/smartparens/smartparens" "\
+Turn off `show-smartparens-mode'.
 
 \(fn)" t nil)
 
