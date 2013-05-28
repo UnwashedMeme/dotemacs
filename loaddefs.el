@@ -3,11 +3,47 @@
 ;;; Code:
 
 
-;;;### (autoloads (mo-git-blame-current mo-git-blame-file) "mo-git-blame"
-;;;;;;  "site-lisp/mo-git-blame/mo-git-blame.el" (20111 4600))
+;;;### (autoloads (global-ethan-wspace-mode ethan-wspace-mode) "site-lisp/ethan-wspace/lisp/ethan-wspace"
+;;;;;;  "site-lisp/ethan-wspace/lisp/ethan-wspace.el" (20899 36597
+;;;;;;  382758 731000))
+;;; Generated autoloads from site-lisp/ethan-wspace/lisp/ethan-wspace.el
+
+(autoload 'ethan-wspace-mode "site-lisp/ethan-wspace/lisp/ethan-wspace" "\
+Minor mode for coping with whitespace.
+
+This just activates each whitespace type in this buffer.
+
+\(fn &optional ARG)" t nil)
+
+(defvar global-ethan-wspace-mode t "\
+Non-nil if Global-Ethan-Wspace mode is enabled.
+See the command `global-ethan-wspace-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-ethan-wspace-mode'.")
+
+(custom-autoload 'global-ethan-wspace-mode "site-lisp/ethan-wspace/lisp/ethan-wspace" nil)
+
+(autoload 'global-ethan-wspace-mode "site-lisp/ethan-wspace/lisp/ethan-wspace" "\
+Toggle Ethan-Wspace mode in all buffers.
+With prefix ARG, enable Global-Ethan-Wspace mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Ethan-Wspace mode is enabled in all buffers where
+`ethan-wspace-is-buffer-appropriate' would do it.
+See `ethan-wspace-mode' for more information on Ethan-Wspace mode.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads (mo-git-blame-current mo-git-blame-file) "site-lisp/mo-git-blame/mo-git-blame"
+;;;;;;  "site-lisp/mo-git-blame/mo-git-blame.el" (20622 36305 48408
+;;;;;;  929000))
 ;;; Generated autoloads from site-lisp/mo-git-blame/mo-git-blame.el
 
-(autoload 'mo-git-blame-file "mo-git-blame" "\
+(autoload 'mo-git-blame-file "site-lisp/mo-git-blame/mo-git-blame" "\
 Calls `git blame' for REVISION of FILE-NAME or `HEAD' if
 REVISION is not given. Initializes the two windows that will show
 the output of 'git blame' and the content.
@@ -26,7 +62,7 @@ blamed.
 
 \(fn &optional FILE-NAME REVISION ORIGINAL-FILE-NAME NUM-LINES-TO-BLAME)" t nil)
 
-(autoload 'mo-git-blame-current "mo-git-blame" "\
+(autoload 'mo-git-blame-current "site-lisp/mo-git-blame/mo-git-blame" "\
 Calls `mo-git-blame-file' for HEAD for the current buffer.
 
 \(fn)" t nil)
@@ -155,7 +191,7 @@ Turn off `show-smartparens-mode'.
 ;;;***
 
 ;;;### (autoloads (git-commit-msg trac-link-title) "site-lisp/trac-fns"
-;;;;;;  "site-lisp/trac-fns.el" (20254 55945))
+;;;;;;  "site-lisp/trac-fns.el" (20738 38656 884357 665000))
 ;;; Generated autoloads from site-lisp/trac-fns.el
 
 (autoload 'trac-link-title "site-lisp/trac-fns" "\
@@ -168,20 +204,6 @@ e.g. http://www.blazingthings.com/dev/zcatalog.html becomes
 
 (autoload 'git-commit-msg "site-lisp/trac-fns" "\
 
-
-\(fn INTERACTIVE)" nil nil)
-
-;;;***
-
-;;;### (autoloads (trac-link-title) "trac-fns" "site-lisp/trac-fns.el"
-;;;;;;  (20133 45780))
-;;; Generated autoloads from site-lisp/trac-fns.el
-
-(autoload 'trac-link-title "trac-fns" "\
-Turn the url at point into a trac link titled with the page title at that url.
-
-e.g. http://www.blazingthings.com/dev/zcatalog.html becomes
- [http://www.blazingthings.com/dev/zcatalog.html Standalone ZCatalog search system for the ZODB]
 
 \(fn)" t nil)
 
@@ -274,22 +296,28 @@ indeed be ordinary text.
 
 ;;;***
 
-;;;### (autoloads (virtualenv-minor-mode virtualenv-workon) "virtualenv"
-;;;;;;  "site-lisp/virtualenv.el/virtualenv.el" (20018 53507))
+;;;### (autoloads (virtualenv-minor-mode virtualenv-deactivate virtualenv-workon)
+;;;;;;  "site-lisp/virtualenv.el/virtualenv" "site-lisp/virtualenv.el/virtualenv.el"
+;;;;;;  (20895 53349 483124 704000))
 ;;; Generated autoloads from site-lisp/virtualenv.el/virtualenv.el
 
-(autoload 'virtualenv-workon "virtualenv" "\
+(autoload 'virtualenv-workon "site-lisp/virtualenv.el/virtualenv" "\
 Activate a virtual environment for python.
 Optional argument ENV if non-nil, either use the string given as
 the virtual environment or if not a string then query the user.
 
 \(fn &optional ENV)" t nil)
 
-(autoload 'virtualenv-minor-mode "virtualenv" "\
+(autoload 'virtualenv-deactivate "site-lisp/virtualenv.el/virtualenv" "\
+
+
+\(fn)" t nil)
+
+(autoload 'virtualenv-minor-mode "site-lisp/virtualenv.el/virtualenv" "\
 Toggle Virtualenv minor mode on or off.
-Interactively, with no prefix argument, toggle the mode.
-With universal prefix ARG turn mode on.
-With zero or negative ARG turn mode off.
+With a prefix argument ARG, enable Virtualenv minor mode if ARG is
+positive, and disable it otherwise.  If called from Lisp, enable
+the mode if ARG is omitted or nil, and toggle it if ARG is `toggle'.
 \\{virtualenv-minor-mode-map}
 
 \(fn &optional ARG)" t nil)

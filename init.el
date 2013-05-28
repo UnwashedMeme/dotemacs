@@ -18,16 +18,16 @@
   "Return a list of all deep subdirectories of DIR that contain files
 that match PATTERN."
   (let* ((ret nil)
-	 (files (directory-files dir))
-	 (max-lisp-eval-depth 3000))
+         (files (directory-files dir))
+         (max-lisp-eval-depth 3000))
     (while files
       (let* ((file (car files))
-	     (path (expand-file-name file dir)))
-	(if (and (file-directory-p path)
-		 (not (string-match "^\\.+" file)))
-	    (setq ret (append ret (find-subdirs-containing path pattern)))
-	  (if (string-match pattern file)
-	      (add-to-list 'ret dir))))
+             (path (expand-file-name file dir)))
+        (if (and (file-directory-p path)
+                 (not (string-match "^\\.+" file)))
+            (setq ret (append ret (find-subdirs-containing path pattern)))
+          (if (string-match pattern file)
+              (add-to-list 'ret dir))))
       (setq files (cdr files)))
     ret))
 
@@ -71,13 +71,13 @@ new directories are prepended to emacs's initial Info path."
 (defun add-info-dir-files-to-path (tree)
   "Add all the info files under TREE to info \"dir\" files"
   (let* ((info-regex "\\.info$")
-	 (info-dirs (find-subdirs-containing tree info-regex)))
+         (info-dirs (find-subdirs-containing tree info-regex)))
     (mapcar (lambda (dir)
-	      (dolist (file (directory-files dir t info-regex))
-		(call-process "install-info" nil nil nil
-			      (format "--dir-file=%s/dir" dir)
-			      (format "--info-file=%s" file))))
-	    info-dirs)))
+              (dolist (file (directory-files dir t info-regex))
+                (call-process "install-info" nil nil nil
+                              (format "--dir-file=%s/dir" dir)
+                              (format "--info-file=%s" file))))
+            info-dirs)))
 
 ;;; Create dir files for any info files in the init-path
 (add-info-dir-files-to-path init-path)
@@ -88,6 +88,9 @@ new directories are prepended to emacs's initial Info path."
 (setq initial-info-path Info-directory-list)
 (add-init-path-to-info-path)
 
+
+;;; get some misc elisp helper fns that might be used in the rest of setup
+(require "elisp-helpers")
 
 
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.

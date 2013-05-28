@@ -32,13 +32,13 @@
 
 ;;;; pyflakes
 (autoload 'mypylint "mypylint")
-(autoload 'my-flymake-minor-mode "mypylint")
+(autoload 'my-pyflakes-minor-mode "mypylint")
 (defun maybe-flymake-activate ()
   (cond ((not (tramp-handle-file-remote-p (buffer-file-name)))
          (message "Activating flymake-python-pyflakes")
          (flymake-python-pyflakes-load)
          (message "Activing custom navigation minor-mode.")
-         (my-flymake-minor-mode))
+         (my-pyymake-minor-mode))
         (t
          (message "Skipping flymake-python-pyflakes for remote tramp buffer."))))
 
