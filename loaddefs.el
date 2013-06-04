@@ -3,6 +3,22 @@
 ;;; Code:
 
 
+;;;### (autoloads (apache-mode) "elpa/apache-mode-2.0/apache-mode"
+;;;;;;  "elpa/apache-mode-2.0/apache-mode.el" (19797 48243 0 0))
+;;; Generated autoloads from elpa/apache-mode-2.0/apache-mode.el
+
+(autoload 'apache-mode "elpa/apache-mode-2.0/apache-mode" "\
+Major mode for editing Apache configuration files.
+
+\(fn)" t nil)
+(add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))
+(add-to-list 'auto-mode-alist '("httpd\\.conf\\'"  . apache-mode))
+(add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))
+(add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
+(add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode))
+
+;;;***
+
 ;;;### (autoloads (global-ethan-wspace-mode ethan-wspace-mode) "site-lisp/ethan-wspace/lisp/ethan-wspace"
 ;;;;;;  "site-lisp/ethan-wspace/lisp/ethan-wspace.el" (20899 36597
 ;;;;;;  382758 731000))

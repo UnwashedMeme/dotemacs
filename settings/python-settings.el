@@ -38,7 +38,7 @@
          (message "Activating flymake-python-pyflakes")
          (flymake-python-pyflakes-load)
          (message "Activing custom navigation minor-mode.")
-         (my-pyymake-minor-mode))
+         (my-pyflakes-minor-mode))
         (t
          (message "Skipping flymake-python-pyflakes for remote tramp buffer."))))
 

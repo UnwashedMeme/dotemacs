@@ -90,7 +90,7 @@ new directories are prepended to emacs's initial Info path."
 
 
 ;;; get some misc elisp helper fns that might be used in the rest of setup
-(require "elisp-helpers")
+(load "elisp-helpers")
 
 
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
