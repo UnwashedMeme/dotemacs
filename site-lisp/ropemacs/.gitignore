@@ -1,0 +1,8 @@
+\.pyc$
+^\.ropeproject$
+~$
+.hg
+.hg*
+build
+dist
+*.egg-info/
