@@ -11,7 +11,7 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
+    ("007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" "5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(delete-selection-mode t)
  '(desktop-path (quote ("." "~/.emacs.d/persistence" "~")))
