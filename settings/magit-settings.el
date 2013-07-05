@@ -9,3 +9,5 @@
              #'(lambda ()
                  (make-local-variable 'scroll-margin)
                  (setq scroll-margin 15)))
+
+(setq magit-read-file-hist ())

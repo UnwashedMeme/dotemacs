@@ -8,15 +8,18 @@
     (autoload 'slime-connect "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el" nil t)
     ))
 
-(push 
- (slime-filename-translation-mount-map
-  "progden" '(("/home/ACCELERATION/nathan/" . "/mnt/progden/home/nathan/")
-              ("/home/ACCELERATION/" . "/mnt/progden/home/")
-              ("/usr/local/share/common-lisp/source/" . "/mnt/progden/site/")
-              ("/opt/lisp/" . "/mnt/progden/")
-              ("/var/git" . "/mnt/progden/gitroot")
-              ("/var/darcs" . "/mnt/progden/darcs-root")))
- slime-filename-translations)
+
+(push (slime-create-filename-translator :machine-instance "progden" :username "nathan")
+      slime-filename-translations)
+;; (push 
+;;  (slime-filename-translation-mount-map
+;;   "progden" '(("/home/ACCELERATION/nathan/" . "/mnt/progden/home/nathan/")
+;;               ("/home/ACCELERATION/" . "/mnt/progden/home/")
+;;               ("/usr/local/share/common-lisp/source/" . "/mnt/progden/site/")
+;;               ("/opt/lisp/" . "/mnt/progden/")
+;;               ("/var/git" . "/mnt/progden/gitroot")
+;;               ("/var/darcs" . "/mnt/progden/darcs-root")))
+;;  slime-filename-translations)
 
 (push 
  (slime-filename-translation-mount-map
@@ -50,3 +53,5 @@
 (defun slime-progden ()
   (interactive)
   (slime-connect "127.0.0.1" 4216))
+
+(define-key slime-mode-map (kbd "C-SPC") 'set-mark-command)

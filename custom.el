@@ -11,7 +11,7 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" "5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
+    ("d921083fbcd13748dd1eb638f66563d564762606f6ea4389ea9328b6f92723b7" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "68769179097d800e415631967544f8b2001dae07972939446e21438b1010748c" "007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" "5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(delete-selection-mode t)
  '(desktop-path (quote ("." "~/.emacs.d/persistence" "~")))
@@ -150,8 +150,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#221f1e" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "microsoft" :family "Consolas"))))
- '(whitespace-line ((t (:background "gray93"))))
- '(whitespace-trailing ((t (:background "#DDBBBB" :foreground "yellow" :weight bold)))))
+ '(whitespace-line ((t (:background "gray93"))) t)
+ '(whitespace-trailing ((t (:background "#DDBBBB" :foreground "yellow" :weight bold))) t))
 
 
 (put 'narrow-to-region 'disabled nil)
