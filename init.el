@@ -92,10 +92,12 @@ new directories are prepended to emacs's initial Info path."
 ;;; get some misc elisp helper fns that might be used in the rest of setup
 (load "elisp-helpers")
 
+(package-initialize)
 
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
-  (ignore-errors (load-file file)))
+  (with-demoted-errors
+      (load-file file)))
 
 (message "Finished all settings files.")
 

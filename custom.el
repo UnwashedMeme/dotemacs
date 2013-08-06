@@ -134,6 +134,7 @@
  '(slime-repl-history-trim-whitespaces t)
  '(smartparens-global-mode t)
  '(smex-save-file "~/.emacs.d/persistence/.smex-items")
+ '(sp-cancel-autoskip-on-backward-movement nil)
  '(tool-bar-mode nil)
  '(tramp-default-method "scpx")
  '(tramp-persistency-file-name "/home/ACCELERATION/nathan/.emacs.d/persistence/tramp")
@@ -150,8 +151,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#221f1e" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "microsoft" :family "Consolas"))))
- '(whitespace-line ((t (:background "gray93"))) t)
- '(whitespace-trailing ((t (:background "#DDBBBB" :foreground "yellow" :weight bold))) t))
+ '(whitespace-line ((t (:background "gray93"))))
+ '(whitespace-trailing ((t (:background "#DDBBBB" :foreground "yellow" :weight bold)))))
 
 
 (put 'narrow-to-region 'disabled nil)
