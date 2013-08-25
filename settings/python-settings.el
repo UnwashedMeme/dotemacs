@@ -18,17 +18,18 @@
 ;;;; ropemacs 
 
 (defun python-settings-load-pymacs-modules ()
-  (pymacs-load "ropemacs" "rope-"))
-
-(defun ropemacs-mode ()
-  (interactive)
-  
-  (python-settings-load-pymacs-modules)
+  (pymacs-load "ropemacs" "rope-")
   (defadvice ropemacs-mode (around no-ropemacs-tramp activate)
     (unless (tramp-handle-file-remote-p (buffer-file-name))
-      ad-do-it))
+      ad-do-it)))
+
+(defun ropemacs-mode ()
+  "load ropemacs then activate ropemacs mode"
+  (interactive)
+  (python-settings-load-pymacs-modules)
   (ropemacs-mode))
 
+ 
 
 ;;;; pyflakes
 (autoload 'mypylint "mypylint")

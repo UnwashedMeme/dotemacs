@@ -1,5 +1,5 @@
 (require 'smartparens-config)
-
+(smartparens-global-mode)
 
 ;; (sp-with-modes '(
 ;;                  emacs-lisp-mode
@@ -12,3 +12,5 @@
 ;;                  clojure-mode
 ;;                  common-lisp-mode
 ;;                  ))
+
+(provide 'smartparens-settings)
