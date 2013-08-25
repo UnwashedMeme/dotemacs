@@ -47,6 +47,7 @@
  '(ido-save-directory-list-file "~/.emacs.d/persistence/.ido.last")
  '(ido-ubiquitous-mode t)
  '(indent-tabs-mode nil)
+ '(js2-bounce-indent-p t)
  '(linum-delay t)
  '(max-lisp-eval-depth 8192)
  '(max-specpdl-size 4000)
