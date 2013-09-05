@@ -89,9 +89,12 @@ new directories are prepended to emacs's initial Info path."
 (add-init-path-to-info-path)
 
 
-;;; get some misc elisp helper fns that might be used in the rest of setup
+;;; get some misc elisp helper fns that might be used in the rest of
+;;; setup
 (load "elisp-helpers")
 
+;;; this is normally loaded at the end of init; I want it done before
+;;; running the -settings files.
 (package-initialize)
 
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
