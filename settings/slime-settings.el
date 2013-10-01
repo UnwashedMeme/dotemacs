@@ -1,8 +1,10 @@
-
 ;;;;;;;;;;;;; slime-setup ;;;;;;;;;;;;;;
-(if (equal (system-name) "nathan-ubuntu.acceleration.net")
+
+(setf adw-slime-init-keep-slime t)
+
+(if (file-exists-p (expand-file-name "~/projects/lisp/ADWCodeBase/misc/shared-slime-init.el"))
     (load (expand-file-name "~/projects/lisp/ADWCodeBase/misc/shared-slime-init.el"))
-  (progn
+  (when (file-exists-p "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el")
     (add-to-list 'load-path "S:/slime")
     (autoload 'slime "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el" nil t)
     (autoload 'slime-connect "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el" nil t)

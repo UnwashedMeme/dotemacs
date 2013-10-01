@@ -8,43 +8,44 @@
 
 ;;;; pymacs code
 
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-exec "pymacs" nil t)
+;; (autoload 'pymacs-load "pymacs" nil t)
 
 
-;;;; ropemacs 
+;; ;;;; ropemacs 
 
-(defun python-settings-load-pymacs-modules ()
-  (pymacs-load "ropemacs" "rope-")
-  (defadvice ropemacs-mode (around no-ropemacs-tramp activate)
-    (unless (tramp-handle-file-remote-p (buffer-file-name))
-      ad-do-it)))
+;; (defun python-settings-load-pymacs-modules ()
+;;   (pymacs-load "ropemacs" "rope-")
+;;   (defadvice ropemacs-mode (around no-ropemacs-tramp activate)
+;;     (unless (tramp-handle-file-remote-p (buffer-file-name))
+;;       ad-do-it)))
 
-(defun ropemacs-mode ()
-  "load ropemacs then activate ropemacs mode"
-  (interactive)
-  (python-settings-load-pymacs-modules)
-  (ropemacs-mode))
+;; (defun ropemacs-mode ()
+;;   "load ropemacs then activate ropemacs mode"
+;;   (interactive)
+;;   (python-settings-load-pymacs-modules)
+;;   (ropemacs-mode))
 
  
 
 ;;;; pyflakes
-(autoload 'mypylint "mypylint")
-(autoload 'my-pyflakes-minor-mode "mypylint")
-(defun maybe-flymake-activate ()
-  (cond ((not (tramp-handle-file-remote-p (buffer-file-name)))
-         (message "Activating flymake-python-pyflakes")
-         (flymake-python-pyflakes-load)
-         (message "Activing custom navigation minor-mode.")
-         (my-pyflakes-minor-mode))
-        (t
-         (message "Skipping flymake-python-pyflakes for remote tramp buffer."))))
+;; (autoload 'mypylint "mypylint")
+;; (autoload 'my-pyflakes-minor-mode "mypylint")
+;; (defun maybe-flymake-activate ()
+;;   (cond ((not (tramp-handle-file-remote-p (buffer-file-name)))
+;;          (message "Activating flymake-python-pyflakes")
+;;          (flymake-python-pyflakes-load)
+;;          (message "Activing custom navigation minor-mode.")
+;;          (my-pyflakes-minor-mode))
+;;         (t
+;;          (message "Skipping flymake-python-pyflakes for remote tramp buffer."))))
 
 ;;; maybe start pyflakes when we load python
-(add-hook 'python-mode-hook 'maybe-flymake-activate)
+;(add-hook 'python-mode-hook 'maybe-flymake-activate)
+
 
 
 ;; (eval-after-load 'auto-complete
@@ -58,7 +59,7 @@
 
 (add-hook 'python-mode-hook #'lambda-mode 1)
 ;(add-hook 'python-mode-hook #'hs-minor-mode 1)
-(add-hook 'python-mode-hook #'ctags-update-minor-mode 1)
+;(add-hook 'python-mode-hook 'ctags-update-minor-mode)
 
 
 ;; (add-hook 'python-mode-hook

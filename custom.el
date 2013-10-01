@@ -6,18 +6,22 @@
  '(ac-comphist-file
    "/home/ACCELERATION/nathan/.emacs.d/persistence/ac-comphist.dat")
  '(ampc-default-server (quote ("10.201.35.222" . 6600)))
+ '(ansi-color-names-vector
+   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(backup-directory-alist (quote (("." . "~/.emacs.d/persistence/backups"))))
  '(clean-buffer-list-delay-general 4)
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("d921083fbcd13748dd1eb638f66563d564762606f6ea4389ea9328b6f92723b7" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "68769179097d800e415631967544f8b2001dae07972939446e21438b1010748c" "007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" "5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
+    ("865d6cb994f89c13b2d7e5961df4eabeea12494583c240c8fe9a788d0f4ee12c" "1d10043a0318d90a71cfa1f7e6b3b67f77c16ff9854f35a5b8722d87cb74f580" "ffd1051ed90d4016db7c61031b1d51784a06fb25af50716a71daea8a617ac5ff" "65680dc32f80a37717ce156071a023c2566859bf05225f929e52655f51d80e2d" "436dd3eb5ff5be80d2db88494b340fcf34dc70a715d19c5aa7b794b763ff0321" "60e70079a187df634db25db4bb778255eaace1ef4309e56389459fb9418b4840" "635518bf81b80533e3ee3a76d55f992494ea7bf3018bf58cd3d44f100d66fa8e" "41b995882dc29bc318669ffbdf9489c3ff18cda49e55bae832ae792c0dc2f0e2" "d921083fbcd13748dd1eb638f66563d564762606f6ea4389ea9328b6f92723b7" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "68769179097d800e415631967544f8b2001dae07972939446e21438b1010748c" "007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" "5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(delete-selection-mode t)
  '(desktop-path (quote ("." "~/.emacs.d/persistence" "~")))
  '(desktop-save-mode t)
  '(diff-switches "-u")
+ '(fci-rule-color "#383838")
  '(flymake-python-pyflakes-executable "flake8")
+ '(font-use-system-font nil)
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(hs-isearch-open t)
@@ -56,7 +60,8 @@
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("marmalade" . "http://marmalade-repo.org/packages/"))))
+     ("marmalade" . "http://marmalade-repo.org/packages/")
+     ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(pc-selection-mode t)
  '(php-file-patterns
    (quote
@@ -142,6 +147,28 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Nathan Bird")
  '(user-mail-address "nathan@acceleration.net")
+ '(vc-annotate-background "#2B2B2B")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#BC8383")
+     (40 . "#CC9393")
+     (60 . "#DFAF8F")
+     (80 . "#D0BF8F")
+     (100 . "#E0CF9F")
+     (120 . "#F0DFAF")
+     (140 . "#5F7F5F")
+     (160 . "#7F9F7F")
+     (180 . "#8FB28F")
+     (200 . "#9FC59F")
+     (220 . "#AFD8AF")
+     (240 . "#BFEBBF")
+     (260 . "#93E0E3")
+     (280 . "#6CA0A3")
+     (300 . "#7CB8BB")
+     (320 . "#8CD0D3")
+     (340 . "#94BFF3")
+     (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3")
  '(vcl-indent-level 3)
  '(winner-mode t nil (winner))
  '(x-select-enable-clipboard t)
@@ -151,7 +178,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#221f1e" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "microsoft" :family "Consolas"))))
  '(whitespace-line ((t (:background "gray93"))))
  '(whitespace-trailing ((t (:background "#DDBBBB" :foreground "yellow" :weight bold)))))
 

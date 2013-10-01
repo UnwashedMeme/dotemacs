@@ -1,7 +1,7 @@
 (prefer-coding-system 'utf-8-unix)
 (push (cons "\\.\\(lisp\\|asd\\|sh\\|py\\|cl\\)\\'" 'utf-8-unix) auto-coding-alist)
 
-(setenv "MANWIDTH" "108")
+(setenv "MANWIDTH" "92")
 
 (defun insert-key (key)
   (interactive (list (read-key-sequence "Key: ")))
