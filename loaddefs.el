@@ -85,24 +85,6 @@ Calls `mo-git-blame-file' for HEAD for the current buffer.
 
 ;;;***
 
-;;;### (autoloads (php-mode php-file-patterns) "php-mode" "site-lisp/php-mode.el"
-;;;;;;  (19797 48243))
-;;; Generated autoloads from site-lisp/php-mode.el
-
-(defvar php-file-patterns '("\\.php[s34]?\\'" "\\.phtml\\'" "\\.inc\\'") "\
-List of file patterns for which to automatically invoke `php-mode'.")
-
-(custom-autoload 'php-file-patterns "php-mode" nil)
-
-(autoload 'php-mode "php-mode" "\
-Major mode for editing PHP code.
-
-\\{php-mode-map}
-
-\(fn)" t nil)
-
-;;;***
-
 
 ;;;### (autoloads (turn-off-show-smartparens-mode turn-on-show-smartparens-mode
 ;;;;;;  show-smartparens-global-mode show-smartparens-mode turn-off-smartparens-mode

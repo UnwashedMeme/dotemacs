@@ -1,4 +1,8 @@
 ;;;; python-mode.el code
+
+(elpy-enable)
+(elpy-use-ipython)
+
 ;; (setq py-install-directory
 ;;       (first (find-subdirs-containing init-path "python-mode.el")))
 ;; (autoload 'python-mode "python-mode" "Python editing mode." t)
@@ -32,8 +36,8 @@
  
 
 ;;;; pyflakes
-;; (autoload 'mypylint "mypylint")
-;; (autoload 'my-pyflakes-minor-mode "mypylint")
+(autoload 'mypylint "mypylint")
+(autoload 'my-pyflakes-minor-mode "mypylint")
 ;; (defun maybe-flymake-activate ()
 ;;   (cond ((not (tramp-handle-file-remote-p (buffer-file-name)))
 ;;          (message "Activating flymake-python-pyflakes")

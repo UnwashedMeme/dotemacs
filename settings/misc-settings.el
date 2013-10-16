@@ -33,8 +33,6 @@
 ;(setq cssm-indent-level 2)
 ;(setq cssm-newline-before-closing-bracket t)
 ;(setq cssm-indent-function #'cssm-c-style-indenter)
-(push '("\\.php$" . php-mode) auto-mode-alist)
-(push '("(COMMIT|TAG|MERGE)_EDITMSG" . git-commit-msg) auto-mode-alist)
 
 ;; Replace Stupid yes or no with y or n
 (defalias 'old-yes-or-no-p (function yes-or-no-p))
@@ -99,9 +97,14 @@ manpage of a `current-word'."
 
 ;;;;;;;; ;;;;;;;;;;;;;;;;;;;;; ;;;;;;;;
 
+(defun look-of-disapproval ()
+  (interactive)
+  (insert-string "ಠ_ಠ"))
 
 
 ;; Turn off novice.el functionality
 (setq disabled-command-function nil)
 (provide 'misc-settings)
+
+
 
