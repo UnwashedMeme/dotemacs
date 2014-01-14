@@ -11,7 +11,7 @@
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-c t") 'fold-dwim-toggle)
-
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 (push '("\\.pp$" . puppet-mode) auto-mode-alist)
 
@@ -26,6 +26,7 @@
 (autoload 'markdown-mode "markdown-mode"
           "Major mode for editing Markdown files" t)
 
+(run-with-idle-timer 3 nil 'yas-global-mode)
 
 ;;CSS mode crap
 ;;try to fix strange stuff in css mode.
@@ -101,6 +102,7 @@ manpage of a `current-word'."
   (interactive)
   (insert-string "ಠ_ಠ"))
 
+(autoload 'dired-omit-mode "dired-x" "Ignore garbage files" t)
 
 ;; Turn off novice.el functionality
 (setq disabled-command-function nil)

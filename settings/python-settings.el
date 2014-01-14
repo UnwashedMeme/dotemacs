@@ -3,6 +3,9 @@
 (elpy-enable)
 (elpy-use-ipython)
 
+(define-key elpy-mode-map [C-up] 'backward-paragraph)
+(define-key elpy-mode-map [C-down] 'forward-paragraph)
+
 ;; (setq py-install-directory
 ;;       (first (find-subdirs-containing init-path "python-mode.el")))
 ;; (autoload 'python-mode "python-mode" "Python editing mode." t)
