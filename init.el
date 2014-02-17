@@ -47,7 +47,6 @@ prepended to emacs's initial load-path."
   (interactive)
   (setq load-path (append (find-subdirs-containing init-settings-path "\\.el$")
                           (find-subdirs-containing init-packages-path "\\.el$")
-                          (list init-path)
                           initial-load-path)))
 
 

@@ -6,12 +6,17 @@
  '(ac-comphist-file
    "/home/ACCELERATION/nathan/.emacs.d/persistence/ac-comphist.dat")
  '(ampc-default-server (quote ("10.201.35.222" . 6600)))
+ '(auto-save-file-name-transforms
+   (quote
+    (("\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\'" "/home/ACCELERATION/nathan/.emacs.d/persistence/auto-saves/\\2" t)
+     (".*" "/home/ACCELERATION/nathan/.emacs.d/persistence/auto-saves" t))))
  '(backup-directory-alist (quote (("." . "~/.emacs.d/persistence/backups"))))
  '(clean-buffer-list-delay-general 4)
  '(column-number-mode t)
+ '(create-lockfiles nil)
  '(custom-safe-themes
    (quote
-    ("f3cdcccf179917f32c3763d89eb743d8e24262d3e12dd964a113d5bb8b1a0df5" "543976df2de12eb2ac235c79c7bc1dac6c58f4a34ae6f72237d6e70d8384f37a" "b5e478c8e066e8f1b21d6db40b1360076249c310e39147abc692e421e0e9fcd0" "821af11eb274545d40c3a6cd5a43f37099e720889c39e398e5e4b0c84648d398" "87af889a90bacf2c5a295feed36b42ed4cd0bf17247c0c52dcd67f9593f16217" "a9b872efe3b5db851a8ad8c17216574566162ff4d84aa12d8c2a2a2e307f0920" "5429622b5b5fe01d07ae187da978f463847cd7cb93ac016caa80563375127b96" "854e99f94a7dae0446b2f8c1de3ceeaeeb60f9085b1880e63def87ae81190869" "66bd7fc2ed32703a332d05f5d2af5c30c12ff4e729d77d8271b91d6f6f7e15fc" "337047491f7db019df2ba54483408d7d7faea0bda61e4c4f5e8cf2f4e3264478" "41c8deb49dea6ee40db394acda39f5ebc649c13559534c9faaebcb320d044aef" "1a93b9b08961240cfe1df39c0c66743100ed5c4d7ee1dc6024c65203bd864725" "146aeadf49a8e27f28d7aebb7640f41fe75c1b9d4e94f38113860d08afd21e37" "2affb26fb9a1b9325f05f4233d08ccbba7ec6e0c99c64681895219f964aac7af" "7d090d4b15e530c28a35e084700aca464291264aad1fa2f2b6bba33dd2e92fd5" "13086a97be7ca9fcf7356f94ed1c77353138e00d70176ef4ae691bc58fda5eea" "2fd1c7f994649d9f879521c4634bd8eddae866db9ff50269a9127b9f93b4e582" "865d6cb994f89c13b2d7e5961df4eabeea12494583c240c8fe9a788d0f4ee12c" "1d10043a0318d90a71cfa1f7e6b3b67f77c16ff9854f35a5b8722d87cb74f580" "ffd1051ed90d4016db7c61031b1d51784a06fb25af50716a71daea8a617ac5ff" "65680dc32f80a37717ce156071a023c2566859bf05225f929e52655f51d80e2d" "436dd3eb5ff5be80d2db88494b340fcf34dc70a715d19c5aa7b794b763ff0321" "60e70079a187df634db25db4bb778255eaace1ef4309e56389459fb9418b4840" "635518bf81b80533e3ee3a76d55f992494ea7bf3018bf58cd3d44f100d66fa8e" "41b995882dc29bc318669ffbdf9489c3ff18cda49e55bae832ae792c0dc2f0e2" "d921083fbcd13748dd1eb638f66563d564762606f6ea4389ea9328b6f92723b7" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "68769179097d800e415631967544f8b2001dae07972939446e21438b1010748c" "007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" "5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
+    ("f2ea643df8d6ab2bd3c7aa2c097e723d4d472fa55cf6b47e5b1f97072aa776e2" "97361db040760bf2991264e2c91412981e0b50347b229302eaf4505e18db3ea1" "7413ff447805288164c049408f9312fc0af5317daf3fac89a5093df8078d971e" "4e1a057fe9a9981e886bd0673d131da904e3306c884715b8bee333ef95303e39" "9d35fed7ff5b2c1102fc44c9d3a9db704d74339ac715826749a25a533d5342c8" "76b226dd750d085eaaf7efa5eb07a3282223d74f327a0f4319512c0a59f6df39" "59e18beba9668c825d2a29ab13f53e7f158baacecc64a5962b0eb2913d749d2f" "9a217ee1dcefd5e83f78381c61e25e9c4d25c7b80bf032f44d7d62ca68c6a384" "4ac7461877fa6fe579cf80f4b07a3557690cb1706a9de9f9d6d10bb3bfe31dad" "f3cdcccf179917f32c3763d89eb743d8e24262d3e12dd964a113d5bb8b1a0df5" "543976df2de12eb2ac235c79c7bc1dac6c58f4a34ae6f72237d6e70d8384f37a" "b5e478c8e066e8f1b21d6db40b1360076249c310e39147abc692e421e0e9fcd0" "821af11eb274545d40c3a6cd5a43f37099e720889c39e398e5e4b0c84648d398" "87af889a90bacf2c5a295feed36b42ed4cd0bf17247c0c52dcd67f9593f16217" "a9b872efe3b5db851a8ad8c17216574566162ff4d84aa12d8c2a2a2e307f0920" "5429622b5b5fe01d07ae187da978f463847cd7cb93ac016caa80563375127b96" "854e99f94a7dae0446b2f8c1de3ceeaeeb60f9085b1880e63def87ae81190869" "66bd7fc2ed32703a332d05f5d2af5c30c12ff4e729d77d8271b91d6f6f7e15fc" "337047491f7db019df2ba54483408d7d7faea0bda61e4c4f5e8cf2f4e3264478" "41c8deb49dea6ee40db394acda39f5ebc649c13559534c9faaebcb320d044aef" "1a93b9b08961240cfe1df39c0c66743100ed5c4d7ee1dc6024c65203bd864725" "146aeadf49a8e27f28d7aebb7640f41fe75c1b9d4e94f38113860d08afd21e37" "2affb26fb9a1b9325f05f4233d08ccbba7ec6e0c99c64681895219f964aac7af" "7d090d4b15e530c28a35e084700aca464291264aad1fa2f2b6bba33dd2e92fd5" "13086a97be7ca9fcf7356f94ed1c77353138e00d70176ef4ae691bc58fda5eea" "2fd1c7f994649d9f879521c4634bd8eddae866db9ff50269a9127b9f93b4e582" "865d6cb994f89c13b2d7e5961df4eabeea12494583c240c8fe9a788d0f4ee12c" "1d10043a0318d90a71cfa1f7e6b3b67f77c16ff9854f35a5b8722d87cb74f580" "ffd1051ed90d4016db7c61031b1d51784a06fb25af50716a71daea8a617ac5ff" "65680dc32f80a37717ce156071a023c2566859bf05225f929e52655f51d80e2d" "436dd3eb5ff5be80d2db88494b340fcf34dc70a715d19c5aa7b794b763ff0321" "60e70079a187df634db25db4bb778255eaace1ef4309e56389459fb9418b4840" "635518bf81b80533e3ee3a76d55f992494ea7bf3018bf58cd3d44f100d66fa8e" "41b995882dc29bc318669ffbdf9489c3ff18cda49e55bae832ae792c0dc2f0e2" "d921083fbcd13748dd1eb638f66563d564762606f6ea4389ea9328b6f92723b7" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "68769179097d800e415631967544f8b2001dae07972939446e21438b1010748c" "007b69ffec046a5842e34fea287b23c49175dfd6c6d5a0d9cdf150a2e8a8979f" "5e1d1564b6a2435a2054aa345e81c89539a72c4cad8536cfe02583e0b7d5e2fa" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "419844e5ed7f7ce7fc580adc2864426e30c52e81" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(delete-selection-mode t)
  '(desktop-path (quote ("." "~/.emacs.d/persistence" "~")))
@@ -51,6 +56,8 @@
  '(ido-save-directory-list-file "~/.emacs.d/persistence/.ido.last")
  '(indent-tabs-mode nil)
  '(js2-basic-offset 2)
+ '(js2-global-externs (quote ("angular")))
+ '(keyfreq-autosave-mode t)
  '(keyfreq-mode t)
  '(linum-delay t)
  '(max-lisp-eval-depth 8192)
@@ -129,9 +136,11 @@
  '(scroll-conservatively 100000)
  '(scroll-margin 3)
  '(scroll-preserve-screen-position t)
+ '(scss-compile-at-save nil)
  '(select-active-regions t)
  '(server-use-tcp t)
  '(show-paren-mode t)
+ '(show-smartparens-global-mode t)
  '(slime-enable-evaluate-in-emacs t)
  '(slime-net-coding-system (quote utf-8-unix))
  '(slime-repl-history-file "~/.emacs.d/persistence/.slime-history.eld")
@@ -140,6 +149,7 @@
  '(slime-repl-history-trim-whitespaces t)
  '(smartparens-global-mode t)
  '(smex-save-file "~/.emacs.d/persistence/.smex-items")
+ '(sml/theme (quote (quote respectful)))
  '(sp-cancel-autoskip-on-backward-movement nil)
  '(tool-bar-mode nil)
  '(tramp-default-method "scpx")

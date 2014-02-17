@@ -2,7 +2,6 @@
 (push (cons "\\.\\(lisp\\|asd\\|sh\\|py\\|cl\\)\\'" 'utf-8-unix) auto-coding-alist)
 
 (setenv "MANWIDTH" "92")
-
 (defun insert-key (key)
   (interactive (list (read-key-sequence "Key: ")))
   (insert "(kbd \"" (key-description key) "\")"))
@@ -13,20 +12,17 @@
 (global-set-key (kbd "C-c t") 'fold-dwim-toggle)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(push '("\\.pp$" . puppet-mode) auto-mode-alist)
-
 
 (push '("\\.vcl$" . vcl-mode) auto-mode-alist)
 (autoload 'vcl-mode "vcl-mode.el")
 
 (push '("\\.sls$" . yaml-mode) auto-mode-alist)
 (autoload 'yaml-mode "yaml-mode.el")
+(push '("(\\.|sys)log$" . syslog-mode) auto-mode-alist)
 
-(push '("\\.md$" . markdown-mode) auto-mode-alist)
-(autoload 'markdown-mode "markdown-mode"
-          "Major mode for editing Markdown files" t)
 
-(run-with-idle-timer 3 nil 'yas-global-mode)
+(run-with-idle-timer 1 nil 'sml/setup)
+(run-with-idle-timer 5 nil 'yas-global-mode)
 
 ;;CSS mode crap
 ;;try to fix strange stuff in css mode.
@@ -42,12 +38,6 @@
 
 ;(setq whitespace-style '(trailing tabs lines-tail empty))
 ;(global-whitespace-mode)
-
-(defun what-face (pos)
-  (interactive "d")
-  (let ((face (or (get-char-property (point) 'read-face-name)
-                  (get-char-property (point) 'face))))
-    (if face (message "Face: %s" face) (message "No face at %d" pos))))
 
 
 (defun fixup-quotes ()
