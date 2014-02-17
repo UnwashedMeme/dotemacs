@@ -96,6 +96,16 @@ new directories are prepended to emacs's initial Info path."
 ;;; running the -settings files.
 (package-initialize)
 
+
+;;; Esnure my baseline packages are installed
+(dolist (pkg '(magit js2-mode markdown-mode smex ido-ubiquitous
+               undo-tree smartparens hideshowvis expand-region
+               leuven-theme moe-theme))
+  
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+
+
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
   (with-demoted-errors

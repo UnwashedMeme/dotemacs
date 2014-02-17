@@ -1,5 +1,7 @@
 ;;;; python-mode.el code
 
+(add-hook 'python-mode-hook 'hideshowvis-minor-mode)
+
 (elpy-enable)
 (elpy-use-ipython)
 

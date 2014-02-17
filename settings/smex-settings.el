@@ -1,7 +1,7 @@
 ;(require 'smex)
 
 (eval-after-load "smex-autoloads"
-                 '(run-with-idle-timer 3 nil
+                 '(run-with-idle-timer 2 nil
                    '(lambda ()
                      (message "smex-autoloads trigger")
                      (smex-initialize)
