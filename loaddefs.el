@@ -19,40 +19,6 @@ Major mode for editing Apache configuration files.
 
 ;;;***
 
-;;;### (autoloads (global-ethan-wspace-mode ethan-wspace-mode) "site-lisp/ethan-wspace/lisp/ethan-wspace"
-;;;;;;  "site-lisp/ethan-wspace/lisp/ethan-wspace.el" (20899 36597
-;;;;;;  382758 731000))
-;;; Generated autoloads from site-lisp/ethan-wspace/lisp/ethan-wspace.el
-
-(autoload 'ethan-wspace-mode "site-lisp/ethan-wspace/lisp/ethan-wspace" "\
-Minor mode for coping with whitespace.
-
-This just activates each whitespace type in this buffer.
-
-\(fn &optional ARG)" t nil)
-
-(defvar global-ethan-wspace-mode t "\
-Non-nil if Global-Ethan-Wspace mode is enabled.
-See the command `global-ethan-wspace-mode' for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `global-ethan-wspace-mode'.")
-
-(custom-autoload 'global-ethan-wspace-mode "site-lisp/ethan-wspace/lisp/ethan-wspace" nil)
-
-(autoload 'global-ethan-wspace-mode "site-lisp/ethan-wspace/lisp/ethan-wspace" "\
-Toggle Ethan-Wspace mode in all buffers.
-With prefix ARG, enable Global-Ethan-Wspace mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
-
-Ethan-Wspace mode is enabled in all buffers where
-`ethan-wspace-is-buffer-appropriate' would do it.
-See `ethan-wspace-mode' for more information on Ethan-Wspace mode.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
 
 ;;;### (autoloads (mo-git-blame-current mo-git-blame-file) "site-lisp/mo-git-blame/mo-git-blame"
 ;;;;;;  "site-lisp/mo-git-blame/mo-git-blame.el" (20622 36305 48408
@@ -294,33 +260,6 @@ indeed be ordinary text.
 
 ;;;***
 
-;;;### (autoloads (virtualenv-minor-mode virtualenv-deactivate virtualenv-workon)
-;;;;;;  "site-lisp/virtualenv.el/virtualenv" "site-lisp/virtualenv.el/virtualenv.el"
-;;;;;;  (20895 53349 483124 704000))
-;;; Generated autoloads from site-lisp/virtualenv.el/virtualenv.el
-
-(autoload 'virtualenv-workon "site-lisp/virtualenv.el/virtualenv" "\
-Activate a virtual environment for python.
-Optional argument ENV if non-nil, either use the string given as
-the virtual environment or if not a string then query the user.
-
-\(fn &optional ENV)" t nil)
-
-(autoload 'virtualenv-deactivate "site-lisp/virtualenv.el/virtualenv" "\
-
-
-\(fn)" t nil)
-
-(autoload 'virtualenv-minor-mode "site-lisp/virtualenv.el/virtualenv" "\
-Toggle Virtualenv minor mode on or off.
-With a prefix argument ARG, enable Virtualenv minor mode if ARG is
-positive, and disable it otherwise.  If called from Lisp, enable
-the mode if ARG is omitted or nil, and toggle it if ARG is `toggle'.
-\\{virtualenv-minor-mode-map}
-
-\(fn &optional ARG)" t nil)
-
-;;;***
 
 (provide 'loaddefs)
 ;; Local Variables:
