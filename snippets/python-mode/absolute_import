@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: absolute_import
+# key: absimp
+# group: future
+# --
+from __future__ import absolute_import

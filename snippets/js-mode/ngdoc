@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: ngdoc
+# key: ngdoc
+# --
+/**
+ * @ngdoc ${1:directive}
+ * @name $2
+ *
+ * @description
+ * $0
+ *
+ *
+ * @example
+   <example module="${3:PharmiSync}">
+     <file name="index.html">
+     </file>
+     <file name="script.js">
+     </file>
+   </example>
+ */

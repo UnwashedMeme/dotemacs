@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: bootstrap-panel
+# key: bpanel
+# group: bootstrap
+# --
+<div class="panel panel-default">
+  <div class="panel-heading">
+  $0
+  </div>
+  <div class="panel-body">
+  </div>
+  <div class="panel-footer">
+  </div>
+</div>
