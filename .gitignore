@@ -1,3 +1,6 @@
 persistence
 elpa
 *.elc
+/server/
+/projectile-bookmarks.eld
+/places

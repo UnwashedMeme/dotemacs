@@ -14,15 +14,15 @@
 
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "C-c j") 'join-line)
-(global-set-key (kbd "C-c t") 'fold-dwim-toggle)
 (global-set-key (kbd "C-=") 'er/expand-region)
-
 
 
 (push '("(\\.|sys)log$" . syslog-mode) auto-mode-alist)
 
+;;; Ensure my baseline packages are installed
+(ensure-packages-installed 'markdown-mode 'rainbow-delimiters 'hideshowvis
+                           'expand-region 'leuven-theme 'moe-theme)
 
-(run-with-idle-timer 5 nil 'yas-global-mode)
 
 ;;CSS mode crap
 ;;try to fix strange stuff in css mode.
@@ -75,10 +75,6 @@ manpage of a `current-word'."
 
 ;;;;;;;; Managing hooks ;;;;;;;;;
 
-;; (add-hook 'hs-minor-mode-hook (lambda ()
-;;                                 (when (and hs-minor-mode (not hideshowvis-minor-mode))
-;;                                   (message "hs-minor-mode-hook powers activate hideshowvis")
-;;                                   (hideshowvis-enable))))
 ;; Make scripts executable on save
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 

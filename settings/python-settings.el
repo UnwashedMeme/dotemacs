@@ -1,6 +1,11 @@
 ;;;; python-mode.el code
+(ensure-packages-installed 'elpy)
 
 (add-hook 'python-mode-hook 'hideshowvis-minor-mode)
+(add-hook 'python-mode-hook #'lambda-mode 1)
+;(add-hook 'python-mode-hook #'hs-minor-mode 1)
+;(add-hook 'python-mode-hook 'ctags-update-minor-mode)
+
 
 (elpy-enable)
 (elpy-use-ipython)
@@ -8,37 +13,9 @@
 (define-key elpy-mode-map [C-up] 'backward-paragraph)
 (define-key elpy-mode-map [C-down] 'forward-paragraph)
 
-;; (setq py-install-directory
-;;       (first (find-subdirs-containing init-path "python-mode.el")))
-;; (autoload 'python-mode "python-mode" "Python editing mode." t)
-;; (autoload 'ipython "python-mode" "Start and IPython shell." t)
-;; (autoload 'py-shell "python-mode" "Start and python shell." t)
 
 
-;;;; pymacs code
 
-;; (autoload 'pymacs-apply "pymacs")
-;; (autoload 'pymacs-call "pymacs")
-;; (autoload 'pymacs-eval "pymacs" nil t)
-;; (autoload 'pymacs-exec "pymacs" nil t)
-;; (autoload 'pymacs-load "pymacs" nil t)
-
-
-;; ;;;; ropemacs 
-
-;; (defun python-settings-load-pymacs-modules ()
-;;   (pymacs-load "ropemacs" "rope-")
-;;   (defadvice ropemacs-mode (around no-ropemacs-tramp activate)
-;;     (unless (tramp-handle-file-remote-p (buffer-file-name))
-;;       ad-do-it)))
-
-;; (defun ropemacs-mode ()
-;;   "load ropemacs then activate ropemacs mode"
-;;   (interactive)
-;;   (python-settings-load-pymacs-modules)
-;;   (ropemacs-mode))
-
- 
 
 ;;;; pyflakes
 (autoload 'mypylint "mypylint")
@@ -66,9 +43,6 @@
 ;;        (add-to-list 'ac-sources 'ac-source-ropemacs)))))
 
 
-(add-hook 'python-mode-hook #'lambda-mode 1)
-;(add-hook 'python-mode-hook #'hs-minor-mode 1)
-;(add-hook 'python-mode-hook 'ctags-update-minor-mode)
 
 
 ;; (add-hook 'python-mode-hook
@@ -98,4 +72,4 @@
 ;; (define-key comint-mode-map [down] 'comint-next-matching-input-from-input)
 ;; (define-key comint-mode-map [up] 'comint-previous-matching-input-from-input)
 
-
+(provide 'python-settings)

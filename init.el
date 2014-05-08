@@ -7,7 +7,6 @@
 (load "~/.emacs.d/loaddefs.el")
 
 
-
 (setq init-packages-path (expand-file-name "site-lisp" init-path)
       init-settings-path (expand-file-name "settings" init-path)
       init-persistence-path (expand-file-name "persistence" init-path))
@@ -52,59 +51,17 @@ prepended to emacs's initial load-path."
 
 ;;; Add the init-path tree to the load-path
 (setq initial-load-path load-path)
-
 (add-init-path-to-load-path)
 
 
 
-(defun add-init-path-to-info-path ()
-  "Add the subdirectories of init-path that contain info directory
-files to the Info-directory-list.  This can safely be run many times
-in a session, without adding multiple copies of the directories.  The
-new directories are prepended to emacs's initial Info path."
-  (interactive)
-  (setq Info-directory-list (append (find-subdirs-containing init-path "^dir$") initial-info-path)))
-
-
-
-(defun add-info-dir-files-to-path (tree)
-  "Add all the info files under TREE to info \"dir\" files"
-  (let* ((info-regex "\\.info$")
-         (info-dirs (find-subdirs-containing tree info-regex)))
-    (mapcar (lambda (dir)
-              (dolist (file (directory-files dir t info-regex))
-                (call-process "install-info" nil nil nil
-                              (format "--dir-file=%s/dir" dir)
-                              (format "--info-file=%s" file))))
-            info-dirs)))
-
-;;; Create dir files for any info files in the init-path
-(add-info-dir-files-to-path init-path)
-
-;;; Add the init-path tree to the Info path
-(require 'info)
-(info-initialize)
-(setq initial-info-path Info-directory-list)
-(add-init-path-to-info-path)
-
-
 ;;; get some misc elisp helper fns that might be used in the rest of
 ;;; setup
-(load "elisp-helpers")
+(require 'elisp-helpers)
+(require 'settings-management)
 
-;;; this is normally loaded at the end of init; I want it done before
-;;; running the -settings files.
-(package-initialize)
-
-
-;;; Esnure my baseline packages are installed
-(dolist (pkg '(magit js2-mode markdown-mode smex ido-ubiquitous
-               undo-tree smartparens hideshowvis expand-region
-               leuven-theme moe-theme))
-  
-  (unless (package-installed-p pkg)
-    (package-install pkg)))
-
+;; get package.el configured and loaded
+(load (expand-file-name "init-package" init-path))
 
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
@@ -112,8 +69,5 @@ new directories are prepended to emacs's initial Info path."
       (load-file file)))
 
 (message "Finished all settings files.")
-
-(server-start)
-
 
 (provide 'init)

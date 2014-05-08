@@ -1,5 +1,7 @@
 ;; less crazy yaml indentation/enter-key
 
+(ensure-packages-installed 'yaml-mode)
+
 (push '("\\.sls$" . yaml-mode) auto-mode-alist)
 (autoload 'yaml-mode "yaml-mode.el")
 

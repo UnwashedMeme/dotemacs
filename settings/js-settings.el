@@ -1,8 +1,13 @@
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-;;(add-hook 'js2-mode-hook 'flymake-jshint-load)
-(add-hook 'js2-mode-hook 'flycheck-mode)
+(ensure-packages-installed 'js2-mode)
 
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+
+(add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'hideshowvis-minor-mode)
+
+(setq js2-basic-offset 2)
+
 
 (defun js2r-enable-keybindings ()
   (require 'js2-refactor)
@@ -27,3 +32,6 @@
 
 (add-hook 'js2-mode-hook 'nb-js-additional-externs)
 (add-hook 'js2-mode-hook 'js2-jshint-apply-jshintrc)
+(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
+
+(provide 'js-settings)

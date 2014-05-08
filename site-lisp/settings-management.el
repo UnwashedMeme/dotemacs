@@ -52,5 +52,5 @@ If `NAME' is nil or empty string, open the settings directory."
       (find-file init-settings-path)
     (find-file (expand-file-name (concat name "-settings.el") init-settings-path))))
 
-(provide 'settings-settings)
+(provide 'settings-management)
 
