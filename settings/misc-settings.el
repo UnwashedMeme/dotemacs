@@ -7,21 +7,21 @@
   (insert "(kbd \"" (key-description key) "\")"))
 
 
+;; without this the background is *always* white; from
+;; https://groups.google.com/forum/#!topic/gnu.emacs.help/e340xVG-Zjo
+(setq inhibit-x-resources t)
+
+
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-c t") 'fold-dwim-toggle)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 
-(push '("\\.vcl$" . vcl-mode) auto-mode-alist)
-(autoload 'vcl-mode "vcl-mode.el")
 
-(push '("\\.sls$" . yaml-mode) auto-mode-alist)
-(autoload 'yaml-mode "yaml-mode.el")
 (push '("(\\.|sys)log$" . syslog-mode) auto-mode-alist)
 
 
-(run-with-idle-timer 1 nil 'sml/setup)
 (run-with-idle-timer 5 nil 'yas-global-mode)
 
 ;;CSS mode crap
@@ -35,9 +35,6 @@
 (defalias 'old-yes-or-no-p (function yes-or-no-p))
 (defalias 'yes-or-no-p (function y-or-n-p))
 
-
-;(setq whitespace-style '(trailing tabs lines-tail empty))
-;(global-whitespace-mode)
 
 
 (defun fixup-quotes ()
@@ -97,6 +94,3 @@ manpage of a `current-word'."
 ;; Turn off novice.el functionality
 (setq disabled-command-function nil)
 (provide 'misc-settings)
-
-
-
