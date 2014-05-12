@@ -4,3 +4,5 @@ elpa
 /server/
 /projectile-bookmarks.eld
 /places
+projectile.cache
+url
