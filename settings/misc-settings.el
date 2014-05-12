@@ -21,7 +21,7 @@
 
 ;;; Ensure my baseline packages are installed
 (ensure-packages-installed 'markdown-mode 'rainbow-delimiters 'hideshowvis
-                           'expand-region 'leuven-theme 'moe-theme)
+                           'expand-region 'leuven-theme 'moe-theme 'nginx-mode 'graphviz-dot-mode 'paradox)
 
 
 ;;CSS mode crap

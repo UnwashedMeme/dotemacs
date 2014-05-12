@@ -1,4 +1,4 @@
-(ensure-packages-installed 'magit)
+(ensure-packages-installed 'magit 'mo-git-blame)
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
