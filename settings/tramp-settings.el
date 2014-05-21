@@ -1,4 +1,8 @@
 (require 'tramp)
+(setf 
+ tramp-default-method "scpx"
+ tramp-persistency-file-name "~/.emacs.d/persistence/tramp")
+
 
 (defun tramp-dissect-file-name-maybe (name &optional nodefault)
   "Like tramp-dissect-file-name, but returns nil instead of error."

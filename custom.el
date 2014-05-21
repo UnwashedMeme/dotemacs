@@ -7,11 +7,6 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    ["#303030" "#ff4b4b" "#d7ff5f" "#fce94f" "#5fafd7" "#d18aff" "#afd7ff" "#c6c6c6"])
- '(auto-save-file-name-transforms
-   (quote
-    (("\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\'" "/home/ACCELERATION/nathan/.emacs.d/persistence/auto-saves/\\2" t)
-     (".*" "/home/ACCELERATION/nathan/.emacs.d/persistence/auto-saves" t))))
- '(backup-directory-alist (quote (("." . "~/.emacs.d/persistence/backups"))))
  '(clean-buffer-list-delay-general 4)
  '(column-number-mode t)
  '(create-lockfiles nil)
@@ -78,7 +73,7 @@
    (quote
     ((virtualenv-default-directory . "~/projects/BusinessPlan44")
      (virtualenv-workon . "bp44")
-     (virtualenv-default-directory . "/home/ACCELERATION/nathan/projects/spat/pynpact/pynpact")
+     (virtualenv-default-directory . "~/projects/spat/pynpact/pynpact")
      (virtualenv-workon . "npact")
      (nginx-indent-level . 2)
      (python-indent . 4)
@@ -144,8 +139,6 @@
  '(smex-save-file "~/.emacs.d/persistence/.smex-items")
  '(sp-cancel-autoskip-on-backward-movement nil)
  '(tool-bar-mode nil)
- '(tramp-default-method "scpx")
- '(tramp-persistency-file-name "/home/ACCELERATION/nathan/.emacs.d/persistence/tramp")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Nathan Bird")
  '(user-mail-address "nathan@acceleration.net")
