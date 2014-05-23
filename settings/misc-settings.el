@@ -48,23 +48,6 @@
           (replace-match "\"" nil t))))
 
 
-(defun my-help ()
-  "If thing at point is a:
-function, tries to `describe-function';
-variable, uses 'describe-variable';
-otherwise uses `manual-entry' to display
-manpage of a `current-word'."
-  (interactive)
-  (let ((var (variable-at-point)))
-    (if (symbolp var)
-        (describe-variable var)
-      (let ((fn (function-called-at-point)))
-        (if fn
-            (describe-function fn)
-          (man (current-word)))))))
-
-(global-set-key (kbd "<C-f1>") 'my-help)
-
 
 ;; C-mwheel for zooming, like other apps
 (global-set-key (kbd "<C-mouse-4>")
