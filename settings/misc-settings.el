@@ -1,3 +1,8 @@
+;;; Some global modes I want
+(global-auto-revert-mode t)
+(global-hl-line-mode t)
+
+
 (prefer-coding-system 'utf-8-unix)
 (push (cons "\\.\\(lisp\\|asd\\|sh\\|py\\|cl\\)\\'" 'utf-8-unix) auto-coding-alist)
 

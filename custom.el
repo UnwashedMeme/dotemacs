@@ -3,9 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ac-comphist-file
-   "/home/ACCELERATION/nathan/.emacs.d/persistence/ac-comphist.dat")
- '(ampc-default-server (quote ("10.201.35.222" . 6600)))
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
@@ -29,10 +26,6 @@
  '(fci-rule-color "#383838")
  '(flymake-python-pyflakes-executable "flake8" t)
  '(font-use-system-font nil)
- '(global-auto-revert-mode t)
- '(global-ethan-wspace-mode nil)
- '(global-hl-line-mode t)
- '(global-linum-mode t)
  '(hs-isearch-open t)
  '(ibuffer-saved-filter-groups nil)
  '(ibuffer-saved-filters
@@ -59,11 +52,9 @@
  '(js2-global-externs (quote ("angular")))
  '(keyfreq-autosave-mode t)
  '(keyfreq-mode t)
- '(linum-delay t)
  '(max-lisp-eval-depth 8192)
  '(max-specpdl-size 4000)
  '(mouse-drag-copy-region nil)
- '(mpc-host "mahes")
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
