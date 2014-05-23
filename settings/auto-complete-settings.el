@@ -1,3 +1,6 @@
-;(require 'auto-complete-config)
-;(ac-config-default)
+(ensure-packages-installed 'auto-complete)
+
+(require 'auto-complete-config)
+(ac-config-default)
+
 

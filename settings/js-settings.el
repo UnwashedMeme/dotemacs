@@ -2,11 +2,20 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
+(setq js2-basic-offset 2)
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'hideshowvis-minor-mode)
+(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'js2-mode-hook 'ctags-auto-update-mode)
 
-(setq js2-basic-offset 2)
+
+(defun js2-ac-activate ()
+  (auto-complete-mode 1)
+  (add-to-list 'ac-sources 'ac-source-yasnippet)
+  (add-to-list 'ac-sources 'ac-source-etags))
+(add-hook 'js2-mode-hook 'js2-ac-activate)
+
 
 
 (defun js2r-enable-keybindings ()
@@ -14,7 +23,7 @@
   (js2r-add-keybindings-with-prefix "C-c C-r"))
 (add-hook 'js2-mode-hook 'js2r-enable-keybindings)
 
-(autoload 'js2-jshint-apply-jshintrc "js2-jshint-extras.el")
+;(autoload 'js2-jshint-apply-jshintrc "js2-jshint-extras.el")
 
 
 (defun nb-js-additional-externs ()
@@ -31,7 +40,6 @@
                                       (cdr (assq 'globals jshintrc-data))))))))))
 
 (add-hook 'js2-mode-hook 'nb-js-additional-externs)
-(add-hook 'js2-mode-hook 'js2-jshint-apply-jshintrc)
-(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
+;(add-hook 'js2-mode-hook 'js2-jshint-apply-jshintrc)
 
 (provide 'js-settings)
