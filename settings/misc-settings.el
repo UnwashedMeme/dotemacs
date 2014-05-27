@@ -1,6 +1,5 @@
 ;;; Some global modes I want
 (global-auto-revert-mode t)
-(global-hl-line-mode t)
 
 
 (prefer-coding-system 'utf-8-unix)
