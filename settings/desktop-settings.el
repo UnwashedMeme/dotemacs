@@ -1,6 +1,12 @@
 (require 'desktop)
-(require 'desktop-autosave)
-(require 'defadvice-let)
+
+(defun desktop-autosave-save ()
+  (when (and desktop-save-mode desktop-dirname)
+    (desktop-save-in-desktop-dir)))
+
+(add-hook 'auto-save-hook 'desktop-autosave-save)
+
+
 (defun emacs-process-p (pid)
   "If pid is the process ID of an emacs process, return t, else nil.
 Also returns nil if pid is nil."
