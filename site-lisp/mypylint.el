@@ -7,8 +7,8 @@
   (setf mypylint-ignore-message-ids nil))
 
 (defun mypylint-ignore-message (message-id)
-  (interactive 
-   (list 
+  (interactive
+   (list
     (if (string= (buffer-name (current-buffer)) "*python-pylint*")
         (let ((case-fold-search nil)
               (line (thing-at-point 'line)))
@@ -17,13 +17,13 @@
               (match-string 1 line)
               (read-from-minibuffer "Message ID: ")))
         )))
-  (cond 
+  (cond
     (message-id
      (pushnew message-id mypylint-ignore-message-ids :test 'string=)
      (message "Currently ignoring: %s" mypylint-ignore-message-ids))
     (t (message "No message-id found to ignore."))))
 
-(eval-after-load 'python-pylint 
+(eval-after-load 'python-pylint
                  '(define-key python-pylint-mode-map "i" 'mypylint-ignore-message))
 
 (defun mypylint (command)
@@ -50,7 +50,7 @@
                  command)))))
 
   (save-some-buffers (not python-pylint-ask-about-save) nil)
-  
+
   (message "Running pylint command %s" command)
   (compilation-start command 'python-pylint-mode))
 
@@ -59,7 +59,7 @@
 ;;;; flymake-python-pyflakes minor mode for easing navigation.
 (setq flymake-python-pyflakes-executable "flake8")
 
-(defvar my-pyflakes-ignore-message-ids nil 
+(defvar my-pyflakes-ignore-message-ids nil
   "List of flake8 message ids to ignore.")
 
 ;;; Define a minor mode to help navigate around
