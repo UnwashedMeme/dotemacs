@@ -38,7 +38,7 @@
 (defgroup vcl nil
   "Customizations for vcl-mode")
 
-(defcustom vcl-indent-level 8
+(defcustom vcl-indent-level 3
   "*The level of indentation (number of space characters) in VCL-mode."
   :type 'integer  :group 'vcl)
 

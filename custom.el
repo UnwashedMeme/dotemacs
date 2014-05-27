@@ -147,7 +147,6 @@
      (340 . "#94BFF3")
      (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color "#DC8CC3")
- '(vcl-indent-level 3)
  '(winner-mode t nil (winner))
  '(x-select-enable-clipboard t)
  '(x-select-enable-primary t))
