@@ -10,12 +10,19 @@
 (elpy-enable)
 (elpy-use-ipython)
 
+;;old customization that probably isn't necessary anymore
+;; '(py-shell-name "ipython")
+;; '(py-start-run-py-shell nil)
+;; '(ropemacs-guess-project t)
+
+
+
 (define-key elpy-mode-map [C-up] 'backward-paragraph)
 (define-key elpy-mode-map [C-down] 'forward-paragraph)
 
 
 
-
+(setf flymake-python-pyflakes-executable "flake8")
 
 ;;;; pyflakes
 (autoload 'mypylint "mypylint")

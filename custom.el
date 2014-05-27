@@ -8,7 +8,6 @@
  '(ansi-color-names-vector
    ["#303030" "#ff4b4b" "#d7ff5f" "#fce94f" "#5fafd7" "#d18aff" "#afd7ff" "#c6c6c6"])
  '(clean-buffer-list-delay-general 4)
- '(column-number-mode t)
  '(create-lockfiles nil)
  '(custom-safe-themes
    (quote
@@ -19,7 +18,6 @@
  '(desktop-save-mode nil)
  '(diff-switches "-u")
  '(fci-rule-color "#383838")
- '(flymake-python-pyflakes-executable "flake8" t)
  '(font-use-system-font nil)
  '(hs-isearch-open t)
  '(ibuffer-saved-filter-groups nil)
@@ -44,31 +42,20 @@
         (mode . lisp-mode)))))))
  '(ido-save-directory-list-file "~/.emacs.d/persistence/.ido.last")
  '(indent-tabs-mode nil)
- '(js2-global-externs (quote ("angular")))
  '(keyfreq-autosave-mode t)
  '(keyfreq-mode t)
  '(max-lisp-eval-depth 8192)
  '(max-specpdl-size 4000)
  '(mouse-drag-copy-region nil)
- '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("marmalade" . "http://marmalade-repo.org/packages/")
-     ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(paradox-automatically-star t)
  '(paradox-github-token "1625ada06c34e8a4888f9d4597c53d968d00cd75")
  '(pc-selection-mode t)
  '(php-file-patterns
    (quote
     ("\\.php[s34]?\\'" "\\.phtml\\'" "\\.inc\\'" "\\.body\\.php\\'")))
- '(projectile-remember-window-configs t)
- '(projectile-switch-project-action (quote projectile-dired))
- '(py-shell-name "ipython")
- '(py-start-run-py-shell nil)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
  '(require-final-newline t)
- '(ropemacs-guess-project t)
  '(safe-local-variable-values
    (quote
     ((virtualenv-default-directory . "~/projects/BusinessPlan44")
@@ -126,18 +113,14 @@
  '(scroll-margin 3)
  '(scroll-preserve-screen-position t)
  '(select-active-regions t)
- '(server-use-tcp t)
  '(show-paren-mode t)
- '(show-smartparens-global-mode t)
  '(slime-enable-evaluate-in-emacs t)
  '(slime-net-coding-system (quote utf-8-unix))
  '(slime-repl-history-file "~/.emacs.d/persistence/.slime-history.eld")
  '(slime-repl-history-remove-duplicates t)
  '(slime-repl-history-size 2000)
  '(slime-repl-history-trim-whitespaces t)
- '(smartparens-global-mode t)
  '(smex-save-file "~/.emacs.d/persistence/.smex-items")
- '(sp-cancel-autoskip-on-backward-movement nil)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Nathan Bird")
