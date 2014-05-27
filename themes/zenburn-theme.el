@@ -1,1 +1,0 @@
-/home/ACCELERATION/nathan/.emacs.d/site-lisp/zenburn-emacs/zenburn-theme.el
