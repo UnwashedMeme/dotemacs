@@ -121,3 +121,5 @@ Key bindings:
   (interactive)
   (setq my-pyflakes-ignore-message-ids nil)
   (my-pyflakes-build-ignore))
+
+(provide 'mypylint)

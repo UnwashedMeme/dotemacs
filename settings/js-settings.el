@@ -1,8 +1,12 @@
-(ensure-packages-installed 'js2-mode)
+(ensure-packages-installed 'js2-mode 'flycheck)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (setq js2-basic-offset 2)
+
+;;We have flycheck+jshint for this
+(setf js2-highlight-external-variables nil)
+
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'hideshowvis-minor-mode)
@@ -18,28 +22,39 @@
 
 
 
+
 (defun js2r-enable-keybindings ()
   (require 'js2-refactor)
   (js2r-add-keybindings-with-prefix "C-c C-r"))
 (add-hook 'js2-mode-hook 'js2r-enable-keybindings)
 
-;(autoload 'js2-jshint-apply-jshintrc "js2-jshint-extras.el")
 
 
-(defun nb-js-additional-externs ()
-  (let ((jshintrc (expand-file-name ".jshintrc"
-                                    (locate-dominating-file
-                                     default-directory ".jshintrc"))))
-    (when (file-readable-p jshintrc)
-      (message "Using jshintrc file: %s" jshintrc)
-      (let ((jshintrc-data (json-read-file jshintrc)))
-        (setq js2-additional-externs
-              (union js2-additional-externs
-                      (mapcar #'symbol-name
-                              (mapcar #'car
-                                      (cdr (assq 'globals jshintrc-data))))))))))
+;;; If you want to use flymake instead of flycheck
+;; (ensure-packages-installed 'flymake-jshint)
+;; (add-hook 'js2-mode-hook
+;;           (lambda ()
+;;             (setq-local jshint-configuration-path
+;;                         (expand-file-name ".jshintrc"
+;;                                           (locate-dominating-file
+;;                                            default-directory ".jshintrc")))
+;;             (flymake-jshint-load)))
 
-(add-hook 'js2-mode-hook 'nb-js-additional-externs)
-;(add-hook 'js2-mode-hook 'js2-jshint-apply-jshintrc)
+
+;;; If you want js2 to highlight externals:
+;; (defun nb-js-additional-externs ()
+;;   (let ((jshintrc (expand-file-name ".jshintrc"
+;;                                     (locate-dominating-file
+;;                                      default-directory ".jshintrc"))))
+;;     (when (file-readable-p jshintrc)
+;;       (message "Using jshintrc file: %s" jshintrc)
+;;       (let ((jshintrc-data (json-read-file jshintrc)))
+;;         (setq js2-additional-externs
+;;               (union js2-additional-externs
+;;                       (mapcar #'symbol-name
+;;                               (mapcar #'car
+;;                                       (cdr (assq 'globals jshintrc-data))))))))))
+;;(add-hook 'js2-mode-hook 'nb-js-additional-externs)
+
 
 (provide 'js-settings)
