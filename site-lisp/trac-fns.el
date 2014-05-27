@@ -1,4 +1,3 @@
-
 ;;;###autoload
 (defun trac-link-title ()
   "Turn the url at point into a trac link titled with the page title at that url.
@@ -9,9 +8,9 @@ e.g. http://www.blazingthings.com/dev/zcatalog.html becomes
   (interactive)
   (let ((url (thing-at-point-url-at-point))
         (oldbuf (current-buffer)))
-    
+
     (let ((buf (url-retrieve-synchronously url)))
-      (let ((title (save-excursion 
+      (let ((title (save-excursion
                     (save-window-excursion
                      (switch-to-buffer buf)
                      (goto-char (point-min))
@@ -33,6 +32,6 @@ e.g. http://www.blazingthings.com/dev/zcatalog.html becomes
   ;; Make fill-paragraph respect bulleted-lists
   (make-variable-buffer-local 'paragraph-start)
   (make-variable-buffer-local 'paragraph-separate)
-  (setq paragraph-start " ?\\*\\|$" 
+  (setq paragraph-start " ?\\*\\|$"
         paragraph-separate "$")
   (auto-fill-mode))
