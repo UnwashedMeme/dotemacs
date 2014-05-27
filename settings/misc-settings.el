@@ -10,11 +10,12 @@
 (global-auto-revert-mode t)
 
 
+;;I don't know why it is so hard to say "really use utf8"
 (prefer-coding-system 'utf-8-unix)
 (push (cons "\\.\\(lisp\\|asd\\|sh\\|py\\|cl\\)\\'" 'utf-8-unix) auto-coding-alist)
 
-;;Othewise it splits the frame then formats the man page to be the
-;;width of the entire frame. (WTF?)
+;;Set manwidth explicitly; otherwise it splits the frame then formats
+;;the man page to be the width of the entire frame. (WTF?)
 (setenv "MANWIDTH" "80")
 
 (defun insert-key (key)
