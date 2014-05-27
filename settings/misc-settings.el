@@ -1,3 +1,11 @@
+
+;;; Ensure my baseline packages are installed
+(ensure-packages-installed 'markdown-mode 'rainbow-delimiters
+                           'hideshowvis 'expand-region
+                           'leuven-theme 'moe-theme 'nginx-mode
+                           'graphviz-dot-mode 'paradox)
+
+
 ;;; Some global modes I want
 (global-auto-revert-mode t)
 
@@ -5,7 +13,10 @@
 (prefer-coding-system 'utf-8-unix)
 (push (cons "\\.\\(lisp\\|asd\\|sh\\|py\\|cl\\)\\'" 'utf-8-unix) auto-coding-alist)
 
-(setenv "MANWIDTH" "88")
+;;Othewise it splits the frame then formats the man page to be the
+;;width of the entire frame. (WTF?)
+(setenv "MANWIDTH" "80")
+
 (defun insert-key (key)
   (interactive (list (read-key-sequence "Key: ")))
   (insert "(kbd \"" (key-description key) "\")"))
@@ -23,19 +34,6 @@
 
 (push '("(\\.|sys)log$" . syslog-mode) auto-mode-alist)
 
-;;; Ensure my baseline packages are installed
-(ensure-packages-installed 'markdown-mode 'rainbow-delimiters
-                           'hideshowvis 'expand-region
-                           'leuven-theme 'moe-theme 'nginx-mode
-                           'graphviz-dot-mode 'paradox)
-
-
-;;CSS mode crap
-;;try to fix strange stuff in css mode.
-;(require 'css-mode)
-;(setq cssm-indent-level 2)
-;(setq cssm-newline-before-closing-bracket t)
-;(setq cssm-indent-function #'cssm-c-style-indenter)
 
 ;; Replace Stupid yes or no with y or n
 (defalias 'old-yes-or-no-p (function yes-or-no-p))
@@ -78,4 +76,5 @@
 
 ;; Turn off novice.el functionality
 (setq disabled-command-function nil)
+
 (provide 'misc-settings)
