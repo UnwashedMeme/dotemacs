@@ -3,8 +3,10 @@
 
 (add-hook 'python-mode-hook 'hideshowvis-minor-mode)
 (add-hook 'python-mode-hook #'lambda-mode 1)
-;(add-hook 'python-mode-hook #'hs-minor-mode 1)
-;(add-hook 'python-mode-hook 'ctags-update-minor-mode)
+;;(add-hook 'python-mode-hook #'hs-minor-mode 1)
+
+;; elpy handles this
+;; (add-hook 'python-mode-hook 'ctags-update-minor-mode)
 
 
 (elpy-enable)
@@ -40,14 +42,6 @@
 ;(add-hook 'python-mode-hook 'maybe-flymake-activate)
 
 
-
-;; (eval-after-load 'auto-complete
-;;   '(progn
-;;     (python-settings-load-pymacs-modules)
-;;     (ac-ropemacs-initialize)
-;;     (add-hook 'python-mode-hook
-;;      (lambda ()
-;;        (add-to-list 'ac-sources 'ac-source-ropemacs)))))
 
 
 
