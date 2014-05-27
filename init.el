@@ -1,7 +1,5 @@
 
 (setq init-path (expand-file-name "~/.emacs.d/"))
-(setq custom-file (expand-file-name "custom.el" init-path))
-(when (file-readable-p custom-file) (load-file custom-file))
 
 (setq generated-autoload-file "~/.emacs.d/loaddefs.el")
 (load "~/.emacs.d/loaddefs.el")
@@ -58,16 +56,19 @@ prepended to emacs's initial load-path."
 ;;; get some misc elisp helper fns that might be used in the rest of
 ;;; setup
 (require 'elisp-helpers)
-(require 'settings-management)
 
 ;; get package.el configured and loaded
 (load (expand-file-name "init-package" init-path))
 
+(require 'settings-management)
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
   (with-demoted-errors
       (load-file file)))
 
 (message "Finished all settings files.")
+
+(setq custom-file (expand-file-name "custom.el" init-path))
+(when (file-readable-p custom-file) (load-file custom-file))
 
 (provide 'init)
