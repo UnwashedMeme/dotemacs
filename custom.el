@@ -56,7 +56,6 @@
     ("\\.php[s34]?\\'" "\\.phtml\\'" "\\.inc\\'" "\\.body\\.php\\'")))
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
- '(require-final-newline t)
  '(safe-local-variable-values
    (quote
     ((virtualenv-default-directory . "~/projects/BusinessPlan44")
