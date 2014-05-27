@@ -43,34 +43,4 @@
 
 
 
-
-
-
-;; (add-hook 'python-mode-hook
-;;           #'(lambda ()
-;;               (autopair-mode)
-;;               (push '(?' . ?')
-;;                     (getf autopair-extra-pairs :code))
-;;               (setq autopair-handle-action-fns
-;;                     (list #'autopair-default-handle-action
-;;                           #'autopair-python-triple-quote-action)))
-;;           1)
-
-;; (add-hook 'python-mode-hook
-;;           #'(lambda ()
-;;               (message "python-mode-hook")
-;;               (when delete-selection-mode
-;;                 (message "Disabling delete-selection-mode")
-;;                 (delete-selection-mode))
-;;               (smartparens-mode)
-;;               (sp-turn-on-delete-selection-mode)))
-
-
-;;;;; try to make python inferior processes behave better
-;; (require 'comint)
-;; (define-key comint-mode-map (kbd "M-") 'comint-next-input)
-;; (define-key comint-mode-map (kbd "M-") 'comint-previous-input)
-;; (define-key comint-mode-map [down] 'comint-next-matching-input-from-input)
-;; (define-key comint-mode-map [up] 'comint-previous-matching-input-from-input)
-
 (provide 'python-settings)
