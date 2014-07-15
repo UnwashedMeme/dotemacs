@@ -11,6 +11,16 @@
 
 (elpy-enable)
 (elpy-use-ipython)
+(setf elpy-rpc-backend "jedi")
+;; (defadvice elpy-rpc--open (around native-rpc-for-tramp activate)
+;;   (interactive)
+;;   (let ((elpy-rpc-backend
+;;          (if (ignore-errors (tramp-tramp-file-p (elpy-project-root)))
+;;              "native"
+;;            elpy-rpc-backend)))
+;;      (message "Using elpy backend: %s for %s" elpy-rpc-backend (elpy-project-root))
+;;      ad-do-it))
+
 
 
 (define-key elpy-mode-map [C-up] 'backward-paragraph)
