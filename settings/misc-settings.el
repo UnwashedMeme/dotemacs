@@ -31,7 +31,6 @@
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "C-c j") 'join-line)
 
-
 (push '("(\\.|sys)log$" . syslog-mode) auto-mode-alist)
 
 

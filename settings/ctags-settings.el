@@ -8,6 +8,6 @@
      (push "--exclude=build" ctags-update-other-options)))
 
 
-(eval-after-load "etags" '(progn (ac-etags-setup)))
+;(eval-after-load "etags" '(progn (ac-etags-setup)))
 
 (provide 'ctags-settings)

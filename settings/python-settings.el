@@ -1,5 +1,6 @@
 ;;;; python-mode.el code
-(ensure-packages-installed 'elpy 'flymake-python-pyflakes)
+(ensure-packages-installed 'flymake-python-pyflakes)
+(require 'elpy)
 
 (add-hook 'python-mode-hook 'hideshowvis-minor-mode)
 (add-hook 'python-mode-hook #'lambda-mode 1)
@@ -11,7 +12,7 @@
 
 (elpy-enable)
 (elpy-use-ipython)
-(setf elpy-rpc-backend "jedi")
+;; (setf elpy-rpc-backend nil)
 ;; (defadvice elpy-rpc--open (around native-rpc-for-tramp activate)
 ;;   (interactive)
 ;;   (let ((elpy-rpc-backend
@@ -22,9 +23,10 @@
 ;;      ad-do-it))
 
 
-
-(define-key elpy-mode-map [C-up] 'backward-paragraph)
-(define-key elpy-mode-map [C-down] 'forward-paragraph)
+(define-key elpy-mode-map [C-right] 'right-word)
+(define-key elpy-mode-map [C-left] 'left-word)
+;(define-key elpy-mode-map [C-up] 'backward-paragraph)
+;(define-key elpy-mode-map [C-down] 'forward-paragraph)
 
 
 

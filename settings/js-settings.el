@@ -18,7 +18,7 @@
   (auto-complete-mode 1)
   (add-to-list 'ac-sources 'ac-source-yasnippet)
   (add-to-list 'ac-sources 'ac-source-etags))
-(add-hook 'js2-mode-hook 'js2-ac-activate)
+;(add-hook 'js2-mode-hook 'js2-ac-activate)
 
 
 
