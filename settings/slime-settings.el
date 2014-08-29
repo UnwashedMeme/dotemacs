@@ -10,6 +10,7 @@
     (autoload 'slime-connect "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el" nil t)
     ))
 
+(setq inferior-lisp-program "sbcl")
 
 (push (slime-create-filename-translator :machine-instance "progden" :username "nathan")
       slime-filename-translations)

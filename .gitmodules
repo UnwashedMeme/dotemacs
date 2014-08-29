@@ -1,3 +1,4 @@
-[submodule "site-lisp/elpy"]
-	path = site-lisp/elpy
-	url = https://github.com/jorgenschaefer/elpy.git
+[submodule "site-lisp/slime"]
+	path = site-lisp/slime
+	url = https://github.com/AccelerationNet/slime.git
+	branch = new-accel

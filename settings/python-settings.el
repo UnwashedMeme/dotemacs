@@ -1,5 +1,5 @@
 ;;;; python-mode.el code
-(ensure-packages-installed 'flymake-python-pyflakes)
+(ensure-packages-installed 'flymake-python-pyflakes 'elpy)
 (require 'elpy)
 
 (add-hook 'python-mode-hook 'hideshowvis-minor-mode)
