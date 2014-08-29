@@ -6,3 +6,4 @@ elpa
 /places
 projectile.cache
 url
+/custom.el
