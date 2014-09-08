@@ -3,6 +3,11 @@
  tramp-default-method "scpx"
  tramp-persistency-file-name "~/.emacs.d/persistence/tramp")
 
+; don't try to run VC checks over tramp
+(setq vc-ignore-dir-regexp
+      (format "\\(%s\\)\\|\\(%s\\)"
+              vc-ignore-dir-regexp
+              tramp-file-name-regexp))
 
 (defun tramp-dissect-file-name-maybe (name &optional nodefault)
   "Like tramp-dissect-file-name, but returns nil instead of error."
