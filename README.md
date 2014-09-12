@@ -18,6 +18,20 @@ Most of the functionality in our shared-slime-init.el is replaced in
 smart-parens, there are different keybindings that need some more
 help.
 
+### for js dev
+
+* `sudo aptititde install npm`
+* `sudo -i npm install jshint -g`
+
+Now you get syntax hightlighting and warnings from [jshint][] when
+editing javascript files.
+
+Some refactoring helpers (like "rename variable") are available via
+the [js2-refactor][] library.
+
+[jshint]: http://www.jshint.com/
+[js2-refactor]: https://github.com/magnars/js2-refactor.el
+
 ### for python dev
 
 * `sudo pip install -U elpy`

@@ -1,4 +1,4 @@
-(ensure-packages-installed 'js2-mode 'flycheck)
+(ensure-packages-installed 'js2-mode 'flycheck 'js2-refactor)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
