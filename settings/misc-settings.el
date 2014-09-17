@@ -2,7 +2,7 @@
 ;;; Ensure my baseline packages are installed
 (ensure-packages-installed 'rainbow-delimiters
                            'hideshowvis
-                           'leuven-theme 'moe-theme 'nginx-mode
+                           'leuven-theme 'nginx-mode
                            'graphviz-dot-mode 'paradox)
 
 
