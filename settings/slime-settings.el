@@ -57,4 +57,4 @@
   (interactive)
   (slime-connect "127.0.0.1" 4216))
 
-(define-key slime-mode-map (kbd "C-SPC") 'set-mark-command)
+(define-key slime-mode-map (kbd "C-c C-f") 'slime-complete-symbol)
