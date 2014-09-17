@@ -22,6 +22,7 @@
 ;;      (message "Using elpy backend: %s for %s" elpy-rpc-backend (elpy-project-root))
 ;;      ad-do-it))
 
+(setq elpy-test-runner 'elpy-test-pytest-runner)
 
 (define-key elpy-mode-map [C-right] 'right-word)
 (define-key elpy-mode-map [C-left] 'left-word)
