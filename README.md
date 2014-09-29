@@ -21,8 +21,8 @@ help.
 ### for js dev
 
 * `sudo aptititde install npm`
-* `sudo -i npm install jshint -g`
-
+* `npm install jshint -g
+`
 Now you get syntax hightlighting and warnings from [jshint][] when
 editing javascript files.
 
