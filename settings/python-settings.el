@@ -6,7 +6,12 @@
   :config
   (progn
     (add-hook 'python-mode-hook 'hideshowvis-minor-mode)
-    (add-hook 'python-mode-hook #'lambda-mode 1)
+    (add-hook 'python-mode-hook
+              '(lambda ()
+                (push '("lambda" . ?λ) prettify-symbols-alist)
+                (push '("<=" . ?≤) prettify-symbols-alist)
+                (push '(">=" . ?≥) prettify-symbols-alist)
+                (prettify-symbols-mode)))
     (require 'elpy)))
 
 (use-package elpy

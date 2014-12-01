@@ -12,7 +12,12 @@
 (add-hook 'js2-mode-hook 'hideshowvis-minor-mode)
 (add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'js2-mode-hook 'ctags-auto-update-mode)
-
+(add-hook 'js2-mode-hook
+          '(lambda ()
+            (push '("function" . ?λ) prettify-symbols-alist)
+            (push '("<=" . ?≤) prettify-symbols-alist)
+            (push '(">=" . ?≥) prettify-symbols-alist)
+            (prettify-symbols-mode)))
 
 (defun js2-ac-activate ()
   (auto-complete-mode 1)
