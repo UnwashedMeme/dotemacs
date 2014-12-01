@@ -11,6 +11,10 @@
 ;;; running the -settings files.
 (package-initialize)
 
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(require 'use-package)
+
 (defun ensure-packages-installed (&rest packages)
   "Ensure that the given packages are installed with package.el"
   (interactive)

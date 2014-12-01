@@ -1,13 +1,10 @@
-(ensure-packages-installed 'magit 'mo-git-blame)
+(use-package magit
+             :ensure magit
+             :bind ("C-x g" . magit-status))
 
-(global-set-key (kbd "C-x g") 'magit-status)
-
-;;(require 'magit)
-
-
-
-;; (add-to-list 'auto-mode-alist '("\\.?gitignore" . conf-mode))
-;; (add-to-list 'auto-mode-alist '("\\.?gitconfig" . conf-mode))
+(use-package mo-git-blame
+             :ensure mo-git-blame
+             :defer t)
 
 ;; (add-to-list 'magit-mode-hook
 ;;              #'(lambda ()

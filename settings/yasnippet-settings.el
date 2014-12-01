@@ -1,7 +1,8 @@
-(ensure-packages-installed 'yasnippet)
+(use-package yasnippet
+             :ensure yasnippet
+             :idle (yas-global-mode t))
 
-(run-with-idle-timer 5 nil 'yas-global-mode)
-(run-with-idle-timer 8 nil '(lambda()
-                             (ensure-packages-installed 'angular-snippets)))
+(use-package angular-snippets
+             :ensure angular-snippets)
 
 (provide 'yasnippet-settings)
