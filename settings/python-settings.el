@@ -25,6 +25,10 @@
                (define-key elpy-mode-map [C-right] 'right-word)
                (define-key elpy-mode-map [C-left] 'left-word)))
 
+(use-package mypylint
+             :ensure python-pylint
+             :commands mypylint)
+
 ;; elpy handles this
 ;; (add-hook 'python-mode-hook 'ctags-update-minor-mode)
 
@@ -45,28 +49,22 @@
 
 
 
-(use-package flymake-python-pyflakes
-             :ensure flymake-python-pyflakes
-             :defer t
-             :config (setf flymake-python-pyflakes-executable "flake8"))
+;;;; pyflakes ELPY does pretty well with pyflakes/flake8 by itself;
+;;;; this adds a bit of ignore logic but...
 
-;;;; pyflakes
-(use-package mypylint
-             :commands mypylint my-pyflakes-minor-mode
-             :init (add-hook 'python-mode-hook 'maybe-flymake-activate))
-
-(defun maybe-flymake-activate ()
-  (cond ((not (tramp-handle-file-remote-p (buffer-file-name)))
-         (message "Activating flymake-python-pyflakes")
-         (flymake-python-pyflakes-load)
-         (message "Activing custom navigation minor-mode.")
-         (my-pyflakes-minor-mode))
-        (t
-         (message "Skipping flymake-python-pyflakes for remote tramp buffer."))))
-
-;;; maybe start pyflakes when we load python
+;; (use-package flymake-python-pyflakes
+;;              :ensure flymake-python-pyflakes
+;;              :defer t
+;;              :config (setf flymake-python-pyflakes-executable "flake8"))
 
 
-
+;; (defun maybe-flymake-activate ()
+;;   (cond ((not (tramp-handle-file-remote-p (buffer-file-name)))
+;;          (message "Activating flymake-python-pyflakes")
+;;          (flymake-python-pyflakes-load)
+;;          (message "Activing custom navigation minor-mode.")
+;;          (my-pyflakes-minor-mode))
+;;         (t
+;;          (message "Skipping flymake-python-pyflakes for remote tramp buffer."))))
 
 (provide 'python-settings)
