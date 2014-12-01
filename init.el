@@ -53,9 +53,8 @@ prepended to emacs's initial load-path."
 
 
 
-;;; get some misc elisp helper fns that might be used in the rest of
-;;; setup
-(require 'elisp-helpers)
+;;; get some misc elisp fns that are used in the rest of setup
+(require 'elisp-helpers)   ; in ./site-list/elisp-helpers.el
 
 ;; get package.el configured and loaded
 (load (expand-file-name "init-package" init-path))
