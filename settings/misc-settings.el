@@ -33,6 +33,9 @@
 
 (push '("(\\.|sys)log$" . syslog-mode) auto-mode-alist)
 
+;; use utf-8-dos for some windows-specific files
+(push (cons "\\.\\(asp\\|csproj\\|as[cmp]x\\)\\'" 'utf-8-dos) auto-coding-alist)
+(push (cons "web\\(\\.\\w+\\)?\\.config\\'" 'utf-8-dos) auto-coding-alist)
 
 ;; Replace Stupid yes or no with y or n
 (defalias 'old-yes-or-no-p (function yes-or-no-p))
