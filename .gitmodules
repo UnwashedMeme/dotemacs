@@ -2,3 +2,6 @@
 	path = site-lisp/slime
 	url = https://github.com/AccelerationNet/slime.git
 	branch = new-accel
+[submodule "site-lisp/ADWCodeBase_Lisp"]
+	path = site-lisp/ADWCodeBase_Lisp
+	url = git.acceleration.net:/var/git/ADWCodeBase_Lisp
