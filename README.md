@@ -5,9 +5,8 @@
 * clone this repo
 * `git submodule update --init`
 * make `~/.emacs.d` a link to this directory
-* open emacs
-* run `M-x package-list-packages` to fetch gnu/marmalade/melpa packages
-* close emacs
+* run `emacs --batch -f package-list-packages` to fetch
+  gnu/marmalade/melpa packages
 * open emacs to auto-install many gnu/marmalade/melpa packages
 
 ### for lisp dev
