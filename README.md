@@ -12,8 +12,6 @@
 
 ### for lisp dev
 
-* ensure `~/projects/lisp` points to your lisp code directory
-
 Most of the functionality in our shared-slime-init.el is replaced in
 smart-parens, there are different keybindings that need some more
 help.

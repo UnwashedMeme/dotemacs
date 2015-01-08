@@ -1,15 +1,7 @@
 ;;;;;;;;;;;;; slime-setup ;;;;;;;;;;;;;;
 
 (setf adw-slime-init-keep-slime t)
-
-(if (file-exists-p (expand-file-name "~/projects/lisp/ADWCodeBase/misc/shared-slime-init.el"))
-    (load (expand-file-name "~/projects/lisp/ADWCodeBase/misc/shared-slime-init.el"))
-  (when (file-exists-p "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el")
-    (add-to-list 'load-path "S:/slime")
-    (autoload 'slime "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el" nil t)
-    (autoload 'slime-connect "S:/home/nathan/lisp/ADWCodeBase/misc/shared-slime-init.el" nil t)
-    ))
-
+(load (expand-file-name "ADWCodeBase_Lisp/misc/shared-slime-init.el" init-packages-path))
 (setq inferior-lisp-program "sbcl")
 
 (push (slime-create-filename-translator :machine-instance "progden" :username "nathan")
