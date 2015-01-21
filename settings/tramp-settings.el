@@ -40,3 +40,10 @@ are preserved through the toggle."
     (find-alternate-file new-filename)
     (goto-char old-point)
     (set-mark old-mark)))
+
+
+(defun tramp-cleanup-all-the-things ()
+  "all buffers, then all connections"
+  (interactive)
+  (tramp-cleanup-all-buffers)
+  (tramp-cleanup-all-connections))
