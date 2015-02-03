@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: javadoc-return
+# key: @ret
+# --
+@return $1 $0
