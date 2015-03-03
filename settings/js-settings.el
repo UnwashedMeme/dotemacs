@@ -2,7 +2,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-(setq js2-basic-offset 2)
+
 
 ;;We have flycheck+jshint for this
 (setf js2-highlight-external-variables nil)
@@ -14,10 +14,11 @@
 (add-hook 'js2-mode-hook 'ctags-auto-update-mode)
 (add-hook 'js2-mode-hook
           '(lambda ()
-            (push '("function" . ?λ) prettify-symbols-alist)
-            (push '("<=" . ?≤) prettify-symbols-alist)
-            (push '(">=" . ?≥) prettify-symbols-alist)
-            (prettify-symbols-mode)))
+             (setq js2-basic-offset 2)
+             (push '("function" . ?λ) prettify-symbols-alist)
+             (push '("<=" . ?≤) prettify-symbols-alist)
+             (push '(">=" . ?≥) prettify-symbols-alist)
+             (prettify-symbols-mode)))
 
 (defun js2-ac-activate ()
   (auto-complete-mode 1)
