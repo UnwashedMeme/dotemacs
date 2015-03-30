@@ -4,7 +4,7 @@
 
 (use-package mo-git-blame
              :ensure mo-git-blame
-             :defer t)
+             :defer 5)
 
 ;; (add-to-list 'magit-mode-hook
 ;;              #'(lambda ()
