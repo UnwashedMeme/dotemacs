@@ -1,6 +1,9 @@
 (use-package magit
              :ensure magit
-             :bind ("C-x g" . magit-status))
+             :bind ("C-x g" . magit-status)
+             :init
+             (progn
+               (setq magit-last-seen-setup-instructions "1.4.0")))
 
 (use-package mo-git-blame
              :ensure mo-git-blame
