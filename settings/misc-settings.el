@@ -71,8 +71,14 @@
 ;;;;;;;; ;;;;;;;;;;;;;;;;;;;;; ;;;;;;;;
 
 (defun look-of-disapproval ()
+  "Insert a look of disapproval `ಠ_ಠ' at the current point"
   (interactive)
   (insert-string "ಠ_ಠ"))
+
+(defun checkmark ()
+  "Insert a checkmark `✓' at the current point"
+  (interactive)
+  (insert-string "✓"))
 
 (autoload 'dired-omit-mode "dired-x" "Ignore garbage files" t)
 
