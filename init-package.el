@@ -7,10 +7,6 @@
      ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
 
-;;; this is normally loaded at the end of init; I want it done before
-;;; running the -settings files.
-(package-initialize)
-
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (require 'use-package)
