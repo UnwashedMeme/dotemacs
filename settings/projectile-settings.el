@@ -12,10 +12,12 @@
 (setf projectile-switch-project-action 'projectile-magit-status)
 
 (defun projectile-magit-status ()
-  (or (magit-status (or (projectile-project-root)
-                        (magit-get-top-dir)
-                        (magit-read-top-dir nil))
-                    'switch-to-buffer)
+  (or (ignore-errors
+       (magit-status-internal
+        (or (projectile-project-root)
+            (magit-get-top-dir)
+            (magit-read-top-dir nil)))
+       t)
       (projectile-dired))
   nil)
 
