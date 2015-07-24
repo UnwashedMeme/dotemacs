@@ -6,7 +6,7 @@
              :config (progn
                        (when (executable-find "marked")
                          (setf markdown-command "marked"))
-                       (setf markdown-css-path
+                       (setf markdown-css-paths
                              "https://raw.githubusercontent.com/gollum/gollum/master/lib/gollum/public/gollum/css/template.css"
                                 ;"http://kevinburke.bitbucket.org/markdowncss/markdown.css"
                              )
