@@ -65,6 +65,8 @@ prepended to emacs's initial load-path."
 ;; get package.el configured and loaded
 (load (expand-file-name "init-package" init-path))
 
+(message "Initialized package system, loading settings...")
+
 (require 'settings-management)
 ;;; Load ~/elisp/settings/*-settings.el, in sorted order.
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
