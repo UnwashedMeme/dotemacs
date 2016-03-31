@@ -3,6 +3,8 @@
 (use-package python
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python[0-9.]*" . python-mode)
+  :bind (:map python-mode-map
+              (("C-x C-e" . python-shell-send-region)))
   :config
   (progn
     (add-hook 'python-mode-hook 'hideshowvis-minor-mode)
