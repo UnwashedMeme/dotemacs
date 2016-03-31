@@ -80,6 +80,7 @@
   (interactive)
   (insert-string "✓"))
 
+(autoload 'dired-extra-startup "dired-x")
 (autoload 'dired-omit-mode "dired-x" "Ignore garbage files" t)
 
 ;; Turn off novice.el functionality
