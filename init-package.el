@@ -7,16 +7,18 @@
      ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
 
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-(require 'use-package)
-
 (defun ensure-packages-installed (&rest packages)
   "Ensure that the given packages are installed with package.el"
   (interactive)
   (dolist (pkg packages)
     (unless (package-installed-p pkg)
       (package-install pkg))))
+
+(ensure-packages-installed 'use-package)
+
+(eval-when-compile
+  (require 'use-package))
+
 
 
 (provide 'init-package)
