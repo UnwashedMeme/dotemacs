@@ -8,3 +8,6 @@ projectile.cache
 url
 /custom.el
 abbrev_defs
+/smex-items
+/ido.last
+/recentf~
