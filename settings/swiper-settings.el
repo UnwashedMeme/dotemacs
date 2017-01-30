@@ -3,7 +3,9 @@
 
 
 (setq ivy-re-builders-alist
-      '((t . ivy--regex-fuzzy)))
+      '((swiper . ivy--regex-plus)
+        (t . ivy--regex-fuzzy)))
+
 (setq magit-completing-read-function 'ivy-completing-read)
 (setq projectile-completion-system 'ivy)
 
@@ -24,3 +26,6 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+
+
+(provide 'swiper-settings)
