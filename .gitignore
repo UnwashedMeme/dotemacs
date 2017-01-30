@@ -11,3 +11,10 @@ abbrev_defs
 /smex-items
 /ido.last
 /recentf*
+/session*
+/request/curl-cookie-jar
+/network-security.data
+/auto-save-list/
+/ac-comphist.dat
+/.python-environments/
+/.emacs.desktop*
