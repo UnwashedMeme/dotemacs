@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: py3
+# key: py3
+# group: future
+# --
+from __future__ import division, absolute_import, print_function
