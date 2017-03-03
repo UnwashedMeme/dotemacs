@@ -1,38 +1,47 @@
-(ensure-packages-installed 'js2-mode 'flycheck 'js2-refactor)
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(use-package js2-mode
+  :mode "\\.js\\'"
+;  :bind (:map js2-mode-map ("S-SPC" . company-complete))
+  :config (progn
+            (setf js2-highlight-external-variables nil)
+            (let ((modes '(flycheck-mode hideshowvis-minor-mode rainbow-delimiters-mode company-mode)))
+              (mapc (lambda (m) (add-hook 'js2-mode-hook m))
+                    (remove-if-not 'functionp modes)))
+
+            (add-hook 'js2-mode-hook
+                      '(lambda ()
+                         (setq js2-basic-offset 2)
+                         (push '("function" . ?λ) prettify-symbols-alist)
+                         (push '("<=" . ?≤) prettify-symbols-alist)
+                         (push '(">=" . ?≥) prettify-symbols-alist)
+                         (prettify-symbols-mode)))
+
+            ))
+
+(use-package js2-refactor)
+(require 'flycheck-settings)
 
 
 
-;;We have flycheck+jshint for this
-(setf js2-highlight-external-variables nil)
+(use-package company-tern
+  :if (executable-find "tern")
+  :commands (company-tern)
+  :init (add-hook 'js2-mode-hook 'tern-mode)
+  )
 
-
-(add-hook 'js2-mode-hook 'flycheck-mode)
-(add-hook 'js2-mode-hook 'hideshowvis-minor-mode)
-(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'js2-mode-hook 'ctags-auto-update-mode)
-(add-hook 'js2-mode-hook
-          '(lambda ()
-             (setq js2-basic-offset 2)
-             (push '("function" . ?λ) prettify-symbols-alist)
-             (push '("<=" . ?≤) prettify-symbols-alist)
-             (push '(">=" . ?≥) prettify-symbols-alist)
-             (prettify-symbols-mode)))
-
-(defun js2-ac-activate ()
-  (auto-complete-mode 1)
-  (add-to-list 'ac-sources 'ac-source-yasnippet)
-  (add-to-list 'ac-sources 'ac-source-etags))
+;(defun js2-ac-activate ()
+;  (auto-complete-mode 1)
+;  (add-to-list 'ac-sources 'ac-source-yasnippet)
+;  (add-to-list 'ac-sources 'ac-source-etags))
 ;(add-hook 'js2-mode-hook 'js2-ac-activate)
 
 
 
 
-(defun js2r-enable-keybindings ()
-  (require 'js2-refactor)
-  (js2r-add-keybindings-with-prefix "C-c C-r"))
-(add-hook 'js2-mode-hook 'js2r-enable-keybindings)
+;(defun js2r-enable-keybindings ()
+;  (require 'js2-refactor)
+;  (js2r-add-keybindings-with-prefix "C-c C-r"))
+;(add-hook 'js2-mode-hook 'js2r-enable-keybindings)
 
 
 
