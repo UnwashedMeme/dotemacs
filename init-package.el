@@ -6,7 +6,6 @@
      ("elpy" . "http://jorgenschaefer.github.io/packages/")
      ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
-
 (defun ensure-packages-installed (&rest packages)
   "Ensure that the given packages are installed with package.el"
   (interactive)
