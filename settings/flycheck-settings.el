@@ -1,4 +1,4 @@
-(require 'dash)
+;(require 'dash)
 
 (defun lunaryorn-use-js-executables-from-node-modules ()
   "Set executables of JS checkers from local node modules."
