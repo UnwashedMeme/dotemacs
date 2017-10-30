@@ -3,7 +3,8 @@
 (ensure-packages-installed 'rainbow-delimiters
                            'hideshowvis
                            'leuven-theme 'nginx-mode
-                           'graphviz-dot-mode 'paradox)
+                           'graphviz-dot-mode 'paradox
+                           'systemd)
 
 
 ;;; Some global modes I want
