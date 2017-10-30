@@ -3,22 +3,6 @@
 ;;; Code:
 
 
-;;;### (autoloads (apache-mode) "elpa/apache-mode-2.0/apache-mode"
-;;;;;;  "elpa/apache-mode-2.0/apache-mode.el" (19797 48243 0 0))
-;;; Generated autoloads from elpa/apache-mode-2.0/apache-mode.el
-
-(autoload 'apache-mode "elpa/apache-mode-2.0/apache-mode" "\
-Major mode for editing Apache configuration files.
-
-\(fn)" t nil)
-(add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))
-(add-to-list 'auto-mode-alist '("httpd\\.conf\\'"  . apache-mode))
-(add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))
-(add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
-(add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode))
-
-;;;***
-
 
 ;;;### (autoloads (mo-git-blame-current mo-git-blame-file) "site-lisp/mo-git-blame/mo-git-blame"
 ;;;;;;  "site-lisp/mo-git-blame/mo-git-blame.el" (20622 36305 48408
