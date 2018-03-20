@@ -18,7 +18,6 @@
 
             ))
 
-(use-package js2-refactor)
 (require 'flycheck-settings)
 
 
