@@ -7,6 +7,7 @@
   :bind (:map ripgrep-search-mode-map
               ("n" . next-error-no-select)
               ("p" . previous-error-no-select)))
+
 (use-package projectile-ripgrep
   :if (executable-find "rg")
   :ensure t

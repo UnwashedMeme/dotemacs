@@ -1,4 +1,5 @@
 (require 'package)
+
 (setq package-archives
    (quote
     (("gnu" . "https://elpa.gnu.org/packages/")
