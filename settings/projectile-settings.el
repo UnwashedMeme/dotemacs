@@ -1,10 +1,6 @@
-(ensure-packages-installed 'projectile
-                           ;'persp-projectile
-                           )
+(ensure-packages-installed 'projectile)
 
-;(require 'persp-projectile)
 (projectile-global-mode)
-;(persp-mode 1)
 
 (setf projectile-remember-window-configs t)
 
