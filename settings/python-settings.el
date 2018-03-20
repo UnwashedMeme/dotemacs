@@ -29,15 +29,12 @@
                  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
                  (add-hook 'elpy-mode-hook 'flycheck-mode)
                  (define-key elpy-mode-map "\C-c\C-n" 'flycheck-next-error)
-                 (define-key elpy-mode-map "\C-c\C-p" 'flycheck-previous-error))
-               (elpy-use-ipython)
-
-               )
+                 (define-key elpy-mode-map "\C-c\C-p" 'flycheck-previous-error)))
              :bind ((:map elpy-mode-map
                           ([C-right] . right-word)
                           ([C-left] . left-word))))
-
-(setenv "IPY_TEST_SIMPLE_PROMPT" "1")
+;(elpy-use-ipython)
+;(setenv "IPY_TEST_SIMPLE_PROMPT" "1")
 
 
 (provide 'python-settings)
