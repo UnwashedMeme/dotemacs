@@ -1,29 +1,32 @@
-(ensure-packages-installed 'projectile)
+(use-package projectile
+  :ensure t
 
-(projectile-global-mode)
+  :config (progn
+            (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+            (projectile-mode +1)
+            (add-to-list 'projectile-globally-ignored-directories "bower_components")
+            (add-to-list 'projectile-globally-ignored-directories "node_modules")
+            (add-to-list 'projectile-globally-ignored-directories "dist")
+            (add-to-list 'projectile-globally-ignored-directories "build")
+            (add-to-list 'projectile-globally-ignored-directories ".tmp")
+            (add-to-list 'projectile-globally-ignored-directories "ve")
+            (add-to-list 'projectile-globally-ignored-directories ".ropeproject")
+            (if (executable-find "git")
+                (setq projectile-switch-project-action 'projectile-use-magit-if-possible)
+              (warn "Can't find executable `git`")
+              )
 
-(setf projectile-remember-window-configs t)
+            (setq projectile-completion-system 'ivy)
+            )
+  )
 
-;; opening a project should show the directory
-(setf projectile-switch-project-action 'projectile-magit-status)
+(defun projectile-use-magit-if-possible ()
+  "If the project being switched to is a git repository, invoke
+    magit-status on the project root directory. Use dired otherwise."
+  (interactive)
+  (if (eq (projectile-project-vcs) 'git)
+      (magit-status (projectile-project-root))
+    (dired (projectile-project-root))))
 
-(defun projectile-magit-status ()
-  (or (ignore-errors
-       (magit-status-internal
-        (or (projectile-project-root)
-            (magit-get-top-dir)
-            (magit-read-top-dir nil)))
-       t)
-      (projectile-dired))
-  nil)
-
-
-(add-to-list 'projectile-globally-ignored-directories "bower_components")
-(add-to-list 'projectile-globally-ignored-directories "node_modules")
-(add-to-list 'projectile-globally-ignored-directories "dist")
-(add-to-list 'projectile-globally-ignored-directories "build")
-(add-to-list 'projectile-globally-ignored-directories ".tmp")
-(add-to-list 'projectile-globally-ignored-directories "ve")
-(add-to-list 'projectile-globally-ignored-directories ".ropeproject")
 
 (provide 'projectile-settings)
