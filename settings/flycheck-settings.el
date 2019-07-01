@@ -15,9 +15,18 @@
 
 
 (use-package flycheck
-  :ensure flycheck
-  :config (add-hook 'flycheck-mode-hook #'lunaryorn-use-js-executables-from-node-modules)
-  )
+  :ensure t
+  :init (global-flycheck-mode)
+  :config (add-hook 'flycheck-mode-hook #'lunaryorn-use-js-executables-from-node-modules))
+
+(use-package flycheck-yamllint
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (eval-after-load 'flycheck
+      '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
+    (add-hook 'yaml-mode-hook 'flycheck-mode)))
 
 ;;flycheck-status-emoji
 
@@ -25,11 +34,6 @@
 ;;      '(flycheck-locate-config-file-home
 ;;        flycheck-locate-config-file-ancestor-directories
 ;;        flycheck-locate-config-file-absolute-path))
-
-
-
-
-
 
 
 (provide 'flycheck-settings)
