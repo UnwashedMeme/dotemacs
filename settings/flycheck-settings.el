@@ -17,7 +17,9 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode)
-  :config (add-hook 'flycheck-mode-hook #'lunaryorn-use-js-executables-from-node-modules))
+  :config (progn
+            (setq flycheck-python-flake8-executable "flake8")
+            (add-hook 'flycheck-mode-hook #'lunaryorn-use-js-executables-from-node-modules)))
 
 (use-package flycheck-yamllint
   :ensure t
